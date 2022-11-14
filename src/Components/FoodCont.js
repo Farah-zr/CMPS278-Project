@@ -7,6 +7,9 @@ import chine from "../img/chine.jpg";
 import ital from "../img/ital.jpg";
 import PaymentSect from "./PaymentSect";
 import { Link } from "react-router-dom";
+// import Nav from 'react-bootstrap/Nav';
+// import { Tab, Tabs } from "react-bootstrap";
+// import ReactTabs from "./Tabs";
 
 
 
@@ -18,6 +21,31 @@ function FoodCont() {
           <div className="cards">
             <div className="all">
               <div className="varieties">
+              {/* <ReactTabs></ReactTabs> */}
+              {/* <Nav variant="tabs" defaultActiveKey="/">
+                <Nav.Item>
+                  <Nav.Link href="/">All</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/african">African</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/chinese">
+                    Chinese
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/italian">
+                    Italian
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/desert">
+                    Desert
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav> */}
+              
                 <Link to="/" className="var-btn">
                   All
                 </Link>

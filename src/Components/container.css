@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(238, 235, 235);
+  color: #fffffe;
   position: relative;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .top-section .search-box {
-  width: 350px;
+  width: 380px;
   height: 45px;
   position: relative;
 }
@@ -50,11 +50,11 @@
 .top-section .search-box input {
   width: 100%;
   height: 100%;
-  background: #1F1D2B;
+  background: #fffffe;
   border: none;
   outline: none;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  color: #ebe9ef;
+  color: #001e1d;
   padding: 0px 40px;
   font-size: 16px;
   border-radius: 6px;

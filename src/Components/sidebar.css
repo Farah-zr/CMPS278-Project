@@ -1,7 +1,7 @@
 header {
   width: 100px;
   height: 100%;
-  background:#1F1D2B;
+  background:#004643;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,18 +27,17 @@ header ul li {
   list-style: none;
   margin: 17px 0;
   position: relative;
-  color: #F17E6C;
-  width: 100%;
+  color: #e8e4e6;
   text-align: center;
 }
 
 header ul a:hover {
   font-size: 32px;
-  color: #fff;
+  color: #e8e4e6;
 }
 
 header ul a:focus {
-  color: #fff;
+  color: #e8e4e6;
 }
 
 header ul a {

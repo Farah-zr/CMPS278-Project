@@ -1,7 +1,8 @@
 /* foodcont styling */
 .foodcontainer {
   width: 100%;
-  height: calc(100% - 45px);
+  /* height: calc(100% - 45px); */
+  height: 100%;
   display: flex;
   padding-top: 15px;
 }
@@ -19,9 +20,9 @@
 
 
 .foodcontainer .left-side .cards {
-  background: #252837;
+  background: #004643;
   padding: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
   border-radius: 10px;
 }
@@ -35,24 +36,25 @@
 
 .foodcontainer .left-side .cards .all .varieties {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .varieties .var-btn {
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
-  color: white;
-  border: 2px solid #302958;
+  color: #001e1d;
+  border: 2px solid #f9bc60;
+  background: #f9bc60;
   padding: 5px 15px;
   border-radius: 10px;
   margin: 0px 5px;
 }
 
 .varieties .var-btn:hover, .varieties .var-btn:focus {
-  background: #F17E6C;
+  background: #abd1c6;
   border: none;
-  color: white
+  color: #001e1d;
 }
 
 
@@ -66,7 +68,7 @@
 }
 
 .foodcontainer .left-side .cards main .details {
-  background: #1F1D2B;
+  background: #abd1c6;
   border-radius: 10px;
   /* max-width: 260px; */
   max-width: 220px;
@@ -90,7 +92,7 @@
 }
 
 .foodcontainer .left-side .cards main .details .food-name h2 {
-  color: #e9e9ec;
+  color: #001e1d;
   font-size: 16px;
   font-weight: bold;
 }
@@ -103,7 +105,7 @@
 .foodcontainer .left-side .cards main .details .food-details p {
   font-size: 12px;
   font-weight: bold;
-  color: #a5a4a9;
+  color: #0f3433;
 }
 
 .foodcontainer .left-side .cards main .details .cart-btn {
@@ -113,8 +115,8 @@
 .foodcontainer .left-side .cards main .details .cart-btn .btn {
   text-decoration: none;
   font-size: 12px;
-  color: #fff;
-  background: linear-gradient(#F17E6C, #fa7c69);
+  color: #fffffe;
+  background: #004643;
   padding: 7px 10px;
   border-radius: 5px;
   font-weight: 600;
@@ -123,9 +125,9 @@
 }
 
 .foodcontainer .left-side .cards main .details .cart-btn .btn:hover {
-  background: none;
-  color: #F17E6C;;
-  border: 1px solid #F17E6C;;
+  background: #f9bc60;
+  color: #001e1d;
+  border: 1px solid #f9bc60;;
   transition: 0.5s ease-in-out;
 }
 
@@ -140,13 +142,14 @@
 }
 
 .foodcontainer .right-side .payment {
-  background: #1F1D2B;
+  background: #004643;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
   border-radius: 20px;
   padding: 10px 20px;
 }
 
 .foodcontainer .right-side .payment .name {
-  color: white;
+  color: #e8e4e6;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -165,8 +168,8 @@
   display: flex;
   flex-direction: column;
   font-size: 12px;
-  color: #adabb8;
-  background: #1F1D2B;
+  color: #0f3433;
+  background: #abd1c6;
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
@@ -185,8 +188,8 @@
 
 .foodcontainer .right-side .payment .price article .pay .order-input {
   padding: 10px 15px;
-  background: #252837;
-  color: white;
+  background: #004643;
+  color: #fffffe;
   border-radius: 7px;
   border: none;
 }
@@ -198,8 +201,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #252837;
-  color: white;
+  background: #004643;
+  color: #fffffe;
   border-radius: 7px;
 }
 
