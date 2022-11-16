@@ -2,7 +2,7 @@ import React from "react";
 import "./foodcont.css";
 import FoodBox from "./FoodBox";
 import cards from "../img/card2.jpg";
-import PaymentSect from "./PaymentSect";
+import PaymentSect from "../cart/PaymentSect";
 import { Link } from "react-router-dom";
 
 
