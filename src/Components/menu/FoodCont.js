@@ -1,11 +1,11 @@
 import React from "react";
-import "./foodcont.css";
+import "../styles/foodcont.css";
 import FoodBox from "./FoodBox";
-import card from "../img/card1.png";
-import afri from "../img/afri.jpg";
-import chine from "../img/chine.jpg";
-import ital from "../img/ital.jpg";
-import PaymentSect from "../PaymentSect";
+import card from "../../img/card1.png";
+import afri from "../../img/afri.jpg";
+import chine from "../../img/chine.jpg";
+import ital from "../../img/ital.jpg";
+import PaymentSect from "../cart/PaymentSect";
 import { Link } from "react-router-dom";
 // import Nav from 'react-bootstrap/Nav';
 // import { Tab, Tabs } from "react-bootstrap";

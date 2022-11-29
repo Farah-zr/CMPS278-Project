@@ -1,6 +1,6 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import user from "../img/user.png";
+import user from "../../img/user.png";
 
 
 function TopSect() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IoRestaurant } from "react-icons/io5";
-import "./comingsoon.css";
+import "./styles/comingsoon.css";
 
 const ComingSoon = () => {
     //Timer function

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { db } from "./firebase";
+import { db } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import { collection, onSnapshot } from "firebase/firestore";
-import "./profile.css";
+import "../styles/profile.css";
 import { motion } from 'framer-motion';
 
 

@@ -1,7 +1,7 @@
 import React from "react";
-import "./container.css";
-import TopSect from "./TopSect";
-import FoodCont from "./FoodCont";
+import "./styles/container.css";
+import TopSect from "./bars/TopSect";
+import FoodCont from "./menu/FoodCont";
 
 
 function Container() {

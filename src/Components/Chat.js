@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./chat.css";
+import "./styles/chat.css";
 import img from "../img/chat.png";
 import rep from "../img/sales-rep.png";
 import { FaPlus, FaTimes } from "react-icons/fa";

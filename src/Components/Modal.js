@@ -3,7 +3,7 @@ import { storage, db } from "./firebase";
 import { useParams, useNavigate } from "react-router-dom";
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore';
-import "./profile.css";
+import "./styles/profile.css";
 
 
 const initialState = {

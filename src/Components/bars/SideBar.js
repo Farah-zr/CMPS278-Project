@@ -1,6 +1,6 @@
 import React from "react";
-import "./sidebar.css";
-import logo from "../img/prime-logo.png";
+import "../styles/sidebar.css";
+import logo from "../../img/prime-logo.png";
 import { FaCog, FaUser, FaSignOutAlt,} from "react-icons/fa";
 import { IoChatbubbleEllipsesSharp, IoRestaurant } from "react-icons/io5";
 import { IoIosHelpCircle } from "react-icons/io";
