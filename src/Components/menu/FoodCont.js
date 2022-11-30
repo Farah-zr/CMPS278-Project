@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/foodcont.css";
-import PaymentSect from "../cart/PaymentSect";
+import Cart from "../cart/Cart";
 import { Box, styled, Tabs } from "@mui/material";
 import Tab from '@mui/material/Tab';
 import African from "./African";
@@ -70,7 +70,7 @@ function FoodCont() {
         </Box>
 
         <div className="right-side">
-          <PaymentSect />
+          <Cart />
         </div>
       </div>
     </>

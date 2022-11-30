@@ -5,7 +5,7 @@ import { Button, Card, CardActions, CardContent, CardMedia, Grid, styled, Typogr
 function Chinese() {
 
     const ColorButton = styled(Button)(({ theme }) => ({
-        color: "white",
+        color: "black",
         backgroundColor: "#f9bc60",
         '&:hover': {
           backgroundColor: "#F9CC89",

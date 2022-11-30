@@ -11,13 +11,11 @@
   width: calc(100% - 30%);
   background: #004643;
   height: 93%;
-  /* padding: 10px; */
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 7px;
   overflow-x: hidden;
   overflow-y: auto;
-  /* padding-left: 20px; */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -25,151 +23,35 @@
   display: none;
 }
 
-
- .cards {
-  background: #004643;
-  padding: 10px;
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
-  margin-top: 20px;
-  border-radius: 10px;
-}
-
-.foodcontainer .left-side .cards .all {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 30px;
-}
-
-.foodcontainer .left-side .cards .all .varieties {
-  display: flex;
-  justify-content: center;
-}
-
-.varieties .var-btn {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  color: #001e1d;
-  border: 2px solid #f9bc60;
-  background: #f9bc60;
-  padding: 5px 15px;
-  border-radius: 10px;
-  margin: 0px 5px;
-}
-
-.varieties .var-btn:hover, .varieties .var-btn:focus {
-  background: #abd1c6;
-  border: none;
-  color: #001e1d;
-}
-
-
-
-/* foodbox styling */
-.foodcontainer .left-side .cards main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.foodcontainer .left-side .cards main .details {
-  background: #abd1c6;
-  border-radius: 10px;
-  /* max-width: 260px; */
-  max-width: 220px;
-  padding-bottom: 20px;
-  margin: 20px 10px;
-  overflow: hidden;
-}
-
-.foodcontainer .left-side .cards main .details .details-img {
-  max-width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.foodcontainer .left-side .cards main .details .food-name {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 20px;
-  margin-top: 10px;
-}
-
-.foodcontainer .left-side .cards main .details .food-name h2 {
-  color: #001e1d;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.foodcontainer .left-side .cards main .details .food-details {
-  padding: 5px 10px;
-  text-align: left;
-  margin: 10px;
-}
-.foodcontainer .left-side .cards main .details .food-details p {
-  font-size: 12px;
-  font-weight: bold;
-  color: #0f3433;
-}
-
-.foodcontainer .left-side .cards main .details .cart-btn {
-  padding: 5px 20px;
-}
-
-.foodcontainer .left-side .cards main .details .cart-btn .btn {
-  text-decoration: none;
-  font-size: 12px;
-  color: #fffffe;
-  background: #004643;
-  padding: 7px 10px;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-}
-
-.foodcontainer .left-side .cards main .details .cart-btn .btn:hover {
-  background: #f9bc60;
-  color: #001e1d;
-  border: 1px solid #f9bc60;;
-  transition: 0.5s ease-in-out;
-}
-
-
 /* PaymentSect styling */
 .foodcontainer .right-side {
   width: calc(100% - 70%);
+  height: 100%;
   padding: 0px 10px;
   padding-left: 20px;
   padding: 15px;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.foodcontainer .right-side .payment {
+.cart {
   background: #004643;
+  height: 100%;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
+  border-radius: 7px;
   padding: 10px 20px;
+  margin: 5px;
 }
 
-.foodcontainer .right-side .payment .name {
+.cart .labels {
   color: #e8e4e6;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   min-width: 270px;
-  margin-left: 7px;
+  margin: 3px 10px;
 }
 
-.foodcontainer .right-side .payment .price {
-  width: 100%;
-  padding: 5px 1px;
-}
-
-.foodcontainer .right-side .payment .price article {
+.cart .item {
   margin: 8px 0;
   padding: 10px;
   display: flex;
@@ -181,11 +63,9 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
-
-.foodcontainer .right-side .payment .price article .pay {
+.cart .item .item-details {
   display: flex;
   justify-content: space-between;
-  /* justify-content: space-around; */
   flex-direction: row;
   min-width: 240px;
   padding: 5px 5px;
@@ -193,15 +73,7 @@
   align-items: center;
 }
 
-.foodcontainer .right-side .payment .price article .pay .order-input {
-  padding: 10px 15px;
-  background: #004643;
-  color: #fffffe;
-  border-radius: 7px;
-  border: none;
-}
-
-.foodcontainer .right-side .payment .price article .qty-box{
+.cart .item .qty-box{
   padding: 7px 10px;
   width: 40px;
   height: 30px;
@@ -213,7 +85,8 @@
   border-radius: 7px;
 }
 
-.foodcontainer .right-side .payment .price article .trash-box {
+.cart .item .item-details .trash-box {
+  margin-top: 7px;
   padding: 8px;
   width: 30px;
   height: 30px;
@@ -221,53 +94,36 @@
   justify-content: center;
   align-items: center;
   background: none;
-  color: #F17E6C;
-  border: 1px solid #F17E6C;
+  color: #004643;
+  border: 1px solid #004643;
   border-radius: 7px;
   cursor: pointer;
   font-size: 15px;
 }
 
-
-.foodcontainer .right-side .payment .price article .trash-box:hover {
-  color: red;
-  border: 1px solid red;
+.cart .item .item-details .trash-box:hover {
+  color: #f9bc60;
+  border: 1px solid #f9bc60;
 }
 
-.foodcontainer .right-side .payment .price article div{
-  display: flex;
-  flex-direction: column;
-  max-width: 100px;
-}
-
-.foodcontainer .right-side .payment .price figure {
-  margin: 8px 0;
-  padding: 10px;
+.cart .total {
   display: flex;
   justify-content: space-between;
+  min-width: 240px;
+  padding: 5px 5px;
+  margin: 10px 0px;
+  min-width: 300px;
   align-items: center;
-  font-size: 12px;
-  color: #adabb8;
-  background: #1F1D2B;
-  border-radius: 5px;
-  min-width: 230px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-} 
-
-.foodcontainer .right-side .payment .price figure:last-child {
-  padding: 15px 10px 15px 10px;
-  width: full-width;
+  color: white;
 }
 
-.foodcontainer .right-side .payment .price figure:last-child .last .space {
+.cart .checkout-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: auto;
 }
-
-.foodcontainer .right-side .payment .price figure:last-child .last p {
-  font-weight: bold;
-}
-
-
 
 @media screen and (max-width: 525px) {
   .foodcontainer {
