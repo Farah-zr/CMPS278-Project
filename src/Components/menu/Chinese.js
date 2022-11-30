@@ -14,131 +14,141 @@ function Chinese() {
     return (
         <>
             <div className="w-full mx-auto">
-                <Grid container spacing={6} sx={{ m: 1, p: 2 }}> 
-                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image="../../img/chine.jpg"
-                            alt="food"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                            Chinese
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                            Price: $10
-                            </Typography>
-                            {/*  make green when Available */}
-                            <Typography variant="body2" color="textSuccess">  
-                            Available
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
-                            <ColorButton size="small" variant="contained">See More</ColorButton>
-                        </CardActions>
-                    </Card>
+                <Grid container spacing={2} sx={{ m: 1, p: 2 }}> 
+                    <Grid item>
+                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image="../../img/chine.jpg"
+                                alt="food"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                Chinese
+                                </Typography>
+                                <Typography variant="body1" color="text.secondary">
+                                Price: $10
+                                </Typography>
+                                {/*  make green when Available */}
+                                <Typography variant="body2" color="textSuccess">  
+                                Available
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                <ColorButton size="small" variant="contained">See More</ColorButton>
+                            </CardActions>
+                        </Card>
+                    </Grid>
 
-                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image="../../img/afri.jpg"
-                            alt="food"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                            Chinese
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                            Price: $10
-                            </Typography>
-                            {/*  make green when Available */}
-                            <Typography variant="body2" color="textSuccess">  
-                            Available
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
-                            <ColorButton size="small" variant="contained">See More</ColorButton>
-                        </CardActions>
-                    </Card>
+                    <Grid item>
+                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image="../../img/chine.jpg"
+                                alt="food"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                Chinese
+                                </Typography>
+                                <Typography variant="body1" color="text.secondary">
+                                Price: $10
+                                </Typography>
+                                {/*  make green when Available */}
+                                <Typography variant="body2" color="textSuccess">  
+                                Available
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                <ColorButton size="small" variant="contained">See More</ColorButton>
+                            </CardActions>
+                        </Card>
+                    </Grid>
 
-                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image="../../img/afri.jpg"
-                            alt="food"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                            Chinese
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                            Price: $10
-                            </Typography>
-                            {/*  make green when Available */}
-                            <Typography variant="body2" color="textSuccess">  
-                            Available
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
-                            <ColorButton size="small" variant="contained">See More</ColorButton>
-                        </CardActions>
-                    </Card>
+                    <Grid item>
+                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image="../../img/chine.jpg"
+                                alt="food"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                Chinese
+                                </Typography>
+                                <Typography variant="body1" color="text.secondary">
+                                Price: $10
+                                </Typography>
+                                {/*  make green when Available */}
+                                <Typography variant="body2" color="textSuccess">  
+                                Available
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                <ColorButton size="small" variant="contained">See More</ColorButton>
+                            </CardActions>
+                        </Card>
+                    </Grid>
 
-                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image="../../img/afri.jpg"
-                            alt="food"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                            Chinese
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                            Price: $10
-                            </Typography>
-                            {/*  make green when Available */}
-                            <Typography variant="body2" color="textSuccess">  
-                            Available
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
-                            <ColorButton size="small" variant="contained">See More</ColorButton>
-                        </CardActions>
-                    </Card>
+                    <Grid item>
+                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image="../../img/chine.jpg"
+                                alt="food"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                Chinese
+                                </Typography>
+                                <Typography variant="body1" color="text.secondary">
+                                Price: $10
+                                </Typography>
+                                {/*  make green when Available */}
+                                <Typography variant="body2" color="textSuccess">  
+                                Available
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                <ColorButton size="small" variant="contained">See More</ColorButton>
+                            </CardActions>
+                        </Card>
+                    </Grid>
 
-                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image="../../img/afri.jpg"
-                            alt="food"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                            Chinese
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                            Price: $10
-                            </Typography>
-                            {/*  make green when Available */}
-                            <Typography variant="body2" color="textSuccess">  
-                            Available
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
-                            <ColorButton size="small" variant="contained">See More</ColorButton>
-                        </CardActions>
-                    </Card>
+                    <Grid item>
+                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                            <CardMedia
+                                component="img"
+                                height="140"
+                                image="../../img/chine.jpg"
+                                alt="food"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                Chinese
+                                </Typography>
+                                <Typography variant="body1" color="text.secondary">
+                                Price: $10
+                                </Typography>
+                                {/*  make green when Available */}
+                                <Typography variant="body2" color="textSuccess">  
+                                Available
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                <ColorButton size="small" variant="contained">See More</ColorButton>
+                            </CardActions>
+                        </Card>
+                    </Grid>
                 </Grid>
             </div>
         </>
