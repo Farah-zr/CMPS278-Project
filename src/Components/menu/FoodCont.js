@@ -1,79 +1,74 @@
 import React from "react";
 import "../styles/foodcont.css";
-import FoodBox from "./FoodBox";
-import card from "../../img/card1.png";
-import afri from "../../img/afri.jpg";
-import chine from "../../img/chine.jpg";
-import ital from "../../img/ital.jpg";
 import PaymentSect from "../cart/PaymentSect";
-import { Link } from "react-router-dom";
-// import Nav from 'react-bootstrap/Nav';
-// import { Tab, Tabs } from "react-bootstrap";
-// import ReactTabs from "./Tabs";
-
+import { Box, styled, Tabs } from "@mui/material";
+import Tab from '@mui/material/Tab';
+import African from "./African";
+import Chinese from "./Chinese";
+import Italian from "./Italian";
 
 
 function FoodCont() {
+
+  const CustomizedTabs = styled(Tabs)({
+    '& .MuiTabs-indicator': {
+      backgroundColor: "#f9bc60",
+    },
+  });
+
+  const CustomizedTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({
+    textTransform: 'none',
+    minWidth: 0,
+    [theme.breakpoints.up('sm')]: {
+      minWidth: 0,
+    },
+    fontWeight: theme.typography.fontWeightRegular,
+    marginRight: theme.spacing(1),
+    color: '#abd1c6',
+    '&:hover': {
+      color: '#F9CC89',
+      opacity: 1,
+    },
+    '&.Mui-selected': {
+      color: '#f9bc60',
+      fontWeight: theme.typography.fontWeightMedium,
+    },
+    '&.Mui-focusVisible': {
+      backgroundColor: '#abd1c6',
+    },
+  }));
+
+  const [category, setCategory] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setCategory(newValue);
+  };
+
   return (
     <>
       <div className="foodcontainer">
-        <div className="left-side">
-          <div className="cards">
-            <div className="all">
-              <div className="varieties">
-              {/* <ReactTabs></ReactTabs> */}
-              {/* <Nav variant="tabs" defaultActiveKey="/">
-                <Nav.Item>
-                  <Nav.Link href="/">All</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="/african">African</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="/chinese">
-                    Chinese
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="/italian">
-                    Italian
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link href="/desert">
-                    Desert
-                  </Nav.Link>
-                </Nav.Item>
-              </Nav> */}
-              
-                <Link to="/" className="var-btn">
-                  All
-                </Link>
-                <Link to="/african" className="var-btn">
-                  African
-                </Link>
-                <Link to="/chinese" className="var-btn">
-                  Chinese
-                </Link>
-                <Link to="/italian" className="var-btn">
-                  Italian
-                </Link>
-                <Link to="/desert" className="var-btn">
-                  Desert
-                </Link>
-              </div>
-            </div>
+        <Box className="left-side">
+            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+              <CustomizedTabs value={category} onChange={handleChange} centered>
+                <CustomizedTab label="African" />
+                <CustomizedTab label="Chinese" />
+                <CustomizedTab label="Italian" />
+              </CustomizedTabs>
+            </Box>
 
-            <main>
-              <FoodBox imgSrc={card} title={"All 1"} price={"$20"} />
-              <FoodBox imgSrc={afri} title={"All 2"} price={"$10"} />
-              <FoodBox imgSrc={ital} title={"All 3"} price={"$5"} />
-              <FoodBox imgSrc={chine} title={"All 4"} price={"$7"} />
-              <FoodBox imgSrc={card} title={"All 5"} price={"$10"} />
-              <FoodBox imgSrc={card} title={"All 6"} price={"$15"} />
-            </main>
-          </div>
-        </div>
+            <div>
+              {
+                category === 0 && <African />
+              }
+              {
+                category === 1 && <Chinese />
+              }
+              {
+                category === 2 && <Italian />
+              }
+            </div>
+        </Box>
+
         <div className="right-side">
           <PaymentSect />
         </div>

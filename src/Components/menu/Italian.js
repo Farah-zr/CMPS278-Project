@@ -1,50 +1,145 @@
 import React from "react";
-import "../styles/foodcont.css";
-import FoodBox from "./FoodBox";
-import cards from "../../img/ital.jpg";
-import PaymentSect from "../cart/PaymentSect";
-import { Link } from "react-router-dom";
-
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, styled, Typography } from "@mui/material";
 
 function Italian() {
+
+    const ColorButton = styled(Button)(({ theme }) => ({
+        color: "white",
+        backgroundColor: "#f9bc60",
+        '&:hover': {
+          backgroundColor: "#F9CC89",
+        },
+      }));
+
     return (
         <>
-            <div className="foodcontainer">
-                <div className="left-side">
-                    <div className="cards">
-                        <div className="all">
-                            <div className="varieties">
-                                <Link to="/" className="var-btn">
-                                    All
-                                </Link>
-                                <Link to="/african" className="var-btn">
-                                    African
-                                </Link>
-                                <Link to="/chinese" className="var-btn">
-                                    Chinese
-                                </Link>
-                                <Link to="/italian" className="var-btn">
-                                    Italian
-                                </Link>
-                                <Link to="/desert" className="var-btn">
-                                    Desert
-                                </Link>
-                            </div>
-                        </div>
+            <div className="w-full mx-auto">
+                <Grid container spacing={6} sx={{ m: 1, p: 2 }}> 
+                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="../../img/chine.jpg"
+                            alt="food"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Italian
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                            Price: $10
+                            </Typography>
+                            {/*  make green when Available */}
+                            <Typography variant="body2" color="textSuccess">  
+                            Available
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                            <ColorButton size="small" variant="contained">See More</ColorButton>
+                        </CardActions>
+                    </Card>
 
-                        <main>
-                            <FoodBox imgSrc={cards} title={"Italian 1"} price={"$28"}/>
-                            <FoodBox imgSrc={cards} title={"Italian 2"} price={"$10"}/>
-                            <FoodBox imgSrc={cards} title={"Italian 3"} price={"$15"}/>
-                            <FoodBox imgSrc={cards} title={"Italian 4"} price={"$32"}/>
-                            <FoodBox imgSrc={cards} title={"Italian 5"} price={"$20"}/>
-                            <FoodBox imgSrc={cards} title={"Italian 6"} price={"$15"}/>
-                        </main>
-                    </div>
-                </div>
-                <div className="right-side">
-                    <PaymentSect />
-                </div>
+                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="../../img/afri.jpg"
+                            alt="food"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Italian
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                            Price: $10
+                            </Typography>
+                            {/*  make green when Available */}
+                            <Typography variant="body2" color="textSuccess">  
+                            Available
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                            <ColorButton size="small" variant="contained">See More</ColorButton>
+                        </CardActions>
+                    </Card>
+
+                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="../../img/afri.jpg"
+                            alt="food"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Italian
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                            Price: $10
+                            </Typography>
+                            {/*  make green when Available */}
+                            <Typography variant="body2" color="textSuccess">  
+                            Available
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                            <ColorButton size="small" variant="contained">See More</ColorButton>
+                        </CardActions>
+                    </Card>
+
+                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="../../img/afri.jpg"
+                            alt="food"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Italian
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                            Price: $10
+                            </Typography>
+                            {/*  make green when Available */}
+                            <Typography variant="body2" color="textSuccess">  
+                            Available
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                            <ColorButton size="small" variant="contained">See More</ColorButton>
+                        </CardActions>
+                    </Card>
+
+                    <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="../../img/afri.jpg"
+                            alt="food"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                            Italian
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                            Price: $10
+                            </Typography>
+                            {/*  make green when Available */}
+                            <Typography variant="body2" color="textSuccess">  
+                            Available
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                            <ColorButton size="small" variant="contained">See More</ColorButton>
+                        </CardActions>
+                    </Card>
+                </Grid>
             </div>
         </>
     );
