@@ -1,4 +1,5 @@
 import React from "react";
+import food from "../../img/chine.jpg";
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, styled, Typography } from "@mui/material";
 
 function African() {
@@ -19,8 +20,8 @@ function African() {
                         <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image="../../img/chine.jpg"
+                                height="170"
+                                image={food}
                                 alt="food"
                             />
                             <CardContent>
@@ -46,8 +47,8 @@ function African() {
                         <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image="../../img/chine.jpg"
+                                height="170"
+                                image={food}
                                 alt="food"
                             />
                             <CardContent>
@@ -73,8 +74,8 @@ function African() {
                         <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image="../../img/chine.jpg"
+                                height="170"
+                                image={food}
                                 alt="food"
                             />
                             <CardContent>
@@ -100,8 +101,8 @@ function African() {
                         <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image="../../img/chine.jpg"
+                                height="170"
+                                image={food}
                                 alt="food"
                             />
                             <CardContent>
@@ -127,8 +128,8 @@ function African() {
                         <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image="../../img/chine.jpg"
+                                height="170"
+                                image={food}
                                 alt="food"
                             />
                             <CardContent>
@@ -154,8 +155,8 @@ function African() {
                         <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image="../../img/chine.jpg"
+                                height="170"
+                                image={food}
                                 alt="food"
                             />
                             <CardContent>
@@ -181,8 +182,8 @@ function African() {
                         <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image="../../img/chine.jpg"
+                                height="170"
+                                image={food}
                                 alt="food"
                             />
                             <CardContent>
@@ -208,8 +209,8 @@ function African() {
                         <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image="../../img/chine.jpg"
+                                height="170"
+                                image={food}
                                 alt="food"
                             />
                             <CardContent>
