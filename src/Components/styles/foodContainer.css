@@ -1,4 +1,4 @@
-/* foodcont styling */
+/* FoodContainer styling */
 .foodcontainer {
   width: 100%;
   /* height: calc(100% - 45px); */
@@ -23,7 +23,7 @@
   display: none;
 }
 
-/* PaymentSect styling */
+/* Cart styling */
 .foodcontainer .right-side {
   width: calc(100% - 70%);
   height: 100%;

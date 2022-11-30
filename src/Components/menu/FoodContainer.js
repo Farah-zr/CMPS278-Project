@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/foodcont.css";
+import "../styles/foodContainer.css";
 import Cart from "../cart/Cart";
 import { Box, styled, Tabs } from "@mui/material";
 import Tab from '@mui/material/Tab';
@@ -8,7 +8,7 @@ import Chinese from "./Chinese";
 import Italian from "./Italian";
 
 
-function FoodCont() {
+function FoodContainer() {
 
   const CustomizedTabs = styled(Tabs)({
     '& .MuiTabs-indicator': {
@@ -77,4 +77,4 @@ function FoodCont() {
   );
 }
 
-export default FoodCont;
+export default FoodContainer;

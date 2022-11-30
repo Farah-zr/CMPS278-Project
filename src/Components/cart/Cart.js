@@ -1,10 +1,7 @@
 import React from "react";
-import "../styles/foodcont.css";
+import "../styles/foodContainer.css";
 import { Box, Button, IconButton, styled } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { FaTrashAlt } from "react-icons/fa";
-
-
 
 function Cart() {
 
