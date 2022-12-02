@@ -12,7 +12,7 @@ function FoodContainer() {
 
   const CustomizedTabs = styled(Tabs)({
     '& .MuiTabs-indicator': {
-      backgroundColor: "#f9bc60",
+      backgroundColor: "#EF9DAA",
     },
   });
 
@@ -24,13 +24,13 @@ function FoodContainer() {
     },
     fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing(1),
-    color: '#abd1c6',
+    color: '#121629',
     '&:hover': {
-      color: '#F9CC89',
+      color: '#EF9DAA',
       opacity: 1,
     },
     '&.Mui-selected': {
-      color: '#f9bc60',
+      color: '#EF9DAA',
       fontWeight: theme.typography.fontWeightMedium,
     },
     '&.Mui-focusVisible': {
@@ -50,9 +50,14 @@ function FoodContainer() {
         <Box className="left-side">
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <CustomizedTabs value={category} onChange={handleChange} centered>
-                <CustomizedTab label="African" />
-                <CustomizedTab label="Chinese" />
-                <CustomizedTab label="Italian" />
+                <CustomizedTab label="Cake Pops" />
+                <CustomizedTab label="Brownies" />
+                <CustomizedTab label="Macarons" />
+                <CustomizedTab label="Cinnamon Rolls" />
+                <CustomizedTab label="Cinnamon Bites" />
+                <CustomizedTab label="Cookies" />
+                <CustomizedTab label="Cupcakes" />
+                <CustomizedTab label="Pretzels" />
               </CustomizedTabs>
             </Box>
 

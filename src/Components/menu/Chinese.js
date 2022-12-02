@@ -6,21 +6,21 @@ function Chinese() {
 
     const ColorButton = styled(Button)(({ theme }) => ({
         color: "black",
-        backgroundColor: "#f9bc60",
+        backgroundColor: "#eebbc3",
         '&:hover': {
-          backgroundColor: "#F9CC89",
+          backgroundColor: "#EF9DAA",
         },
       }));
 
     return (
         <>
             <div className="w-full mx-auto">
-                <Grid container spacing={2} sx={{ m: 1, p: 2 }}> 
+                <Grid container spacing={1} sx={{ p: 1 }}> 
                     <Grid item>
-                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <Card sx={{ width: 200, height: 300, m: 2, backgroundColor: "#fffffe" }}>
                             <CardMedia
                                 component="img"
-                                height="170"
+                                height="130"
                                 image={food}
                                 alt="food"
                             />
@@ -37,17 +37,17 @@ function Chinese() {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                {/* <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton> */}
                                 <ColorButton size="small" variant="contained">See More</ColorButton>
                             </CardActions>
                         </Card>
                     </Grid>
 
                     <Grid item>
-                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <Card sx={{ width: 200, height: 300, m: 2, backgroundColor: "#fffffe" }}>
                             <CardMedia
                                 component="img"
-                                height="170"
+                                height="130"
                                 image={food}
                                 alt="food"
                             />
@@ -64,17 +64,17 @@ function Chinese() {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                {/* <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton> */}
                                 <ColorButton size="small" variant="contained">See More</ColorButton>
                             </CardActions>
                         </Card>
                     </Grid>
 
                     <Grid item>
-                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <Card sx={{ width: 200, height: 300, m: 2, backgroundColor: "#fffffe" }}>
                             <CardMedia
                                 component="img"
-                                height="170"
+                                height="130"
                                 image={food}
                                 alt="food"
                             />
@@ -91,17 +91,17 @@ function Chinese() {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                {/* <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton> */}
                                 <ColorButton size="small" variant="contained">See More</ColorButton>
                             </CardActions>
                         </Card>
                     </Grid>
 
                     <Grid item>
-                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <Card sx={{ width: 200, height: 300, m: 2, backgroundColor: "#fffffe" }}>
                             <CardMedia
                                 component="img"
-                                height="170"
+                                height="130"
                                 image={food}
                                 alt="food"
                             />
@@ -118,17 +118,17 @@ function Chinese() {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                {/* <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton> */}
                                 <ColorButton size="small" variant="contained">See More</ColorButton>
                             </CardActions>
                         </Card>
                     </Grid>
 
                     <Grid item>
-                        <Card sx={{ width: 250, height: 350, m: 2, backgroundColor: "#abd1c6" }}>
+                        <Card sx={{ width: 200, height: 300, m: 2, backgroundColor: "#fffffe" }}>
                             <CardMedia
                                 component="img"
-                                height="170"
+                                height="130"
                                 image={food}
                                 alt="food"
                             />
@@ -145,7 +145,7 @@ function Chinese() {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton>
+                                {/* <ColorButton sx={{ mx:1 }} size="small" variant="contained">Add to Cart</ColorButton> */}
                                 <ColorButton size="small" variant="contained">See More</ColorButton>
                             </CardActions>
                         </Card>

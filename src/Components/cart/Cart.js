@@ -7,9 +7,9 @@ function Cart() {
 
   const ColorButton = styled(Button)(({ theme }) => ({
     color: "black",
-    backgroundColor: "#f9bc60",
+    backgroundColor: "#eebbc3",
     '&:hover': {
-      backgroundColor: "#F9CC89",
+      backgroundColor: "#EF9DAA",
     },
   }));
 

@@ -9,7 +9,7 @@
 
 .foodcontainer .left-side {
   width: calc(100% - 30%);
-  background: #004643;
+  background: #d4d8f0;
   height: 93%;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
@@ -34,7 +34,7 @@
 }
 
 .cart {
-  background: #004643;
+  background: #d4d8f0;
   height: 100%;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
   border-radius: 7px;
@@ -43,7 +43,7 @@
 }
 
 .cart .labels {
-  color: #e8e4e6;
+  color: #121629;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,8 +57,8 @@
   display: flex;
   flex-direction: column;
   font-size: 12px;
-  color: #0f3433;
-  background: #abd1c6;
+  color: #121629;
+  background: #fffffe;
   border-radius: 5px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
@@ -80,8 +80,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #004643;
-  color: #fffffe;
+  background: #eebbc3;
+  color: #121629;
   border-radius: 7px;
 }
 
@@ -94,16 +94,16 @@
   justify-content: center;
   align-items: center;
   background: none;
-  color: #004643;
-  border: 1px solid #004643;
+  color: #eebbc3;
+  border: 1px solid #eebbc3;
   border-radius: 7px;
   cursor: pointer;
   font-size: 15px;
 }
 
 .cart .item .item-details .trash-box:hover {
-  color: #f9bc60;
-  border: 1px solid #f9bc60;
+  color: #EF9DAA;
+  border: 1px solid #EF9DAA;
 }
 
 .cart .total {
@@ -114,7 +114,7 @@
   margin: 10px 0px;
   min-width: 300px;
   align-items: center;
-  color: white;
+  color: #121629;
 }
 
 .cart .checkout-btn {
