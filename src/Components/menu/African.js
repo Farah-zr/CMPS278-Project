@@ -1,6 +1,6 @@
 import React from "react";
 import food from "../../img/chine.jpg";
-import { Button, Card, CardActions, CardContent, CardMedia, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Grid, styled, TextField, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Dialog, DialogActions, DialogContent, DialogContentText, Divider, Grid, styled, TextField, Typography } from "@mui/material";
 
 function African() {
 

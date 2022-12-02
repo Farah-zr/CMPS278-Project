@@ -11,6 +11,7 @@ import ComingSoon from "./Components/ComingSoon";
 import Chat from "./Components/Chat";
 import Modal from "./Components/Modal";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Checkout from "./Components/checkout/Checkout";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/chinese" element={<ChineseFood />} />
             <Route path="/italian" element={<ItalianFood />} />
             <Route path="/desert" element={<DesertFood />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/comingsoon" element={<ComingSoon />} />

@@ -95,7 +95,7 @@
   align-items: center;
   background: none;
   color: #eebbc3;
-  border: 1px solid #eebbc3;
+  /* border: 1px solid #eebbc3; */
   border-radius: 7px;
   cursor: pointer;
   font-size: 15px;
@@ -118,8 +118,7 @@
 }
 
 .cart .checkout-btn {
-  display: flex;
-  justify-content: flex-end;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: auto;
