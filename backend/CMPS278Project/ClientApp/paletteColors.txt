@@ -1,0 +1,10 @@
+background : #232946
+light blue : #d4d8f0
+
+white: #fffffe
+
+light pink: #eebbc3
+dark pink: #EF9DAA
+
+stroke: #121629 // text
+ 

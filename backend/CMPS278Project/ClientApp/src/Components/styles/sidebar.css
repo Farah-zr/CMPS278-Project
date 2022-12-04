@@ -1,0 +1,58 @@
+header {
+  width: 100px;
+  height: 100%;
+  background:#232946;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+}
+
+header img {
+  width: 5rem;
+  padding-top: 15px;
+}
+
+header ul {
+  padding-top: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin: 17px 0;
+  position: relative;
+  color: #e8e4e6;
+  text-align: center;
+}
+
+header ul a:hover {
+  font-size: 32px;
+  color: #e8e4e6;
+}
+
+header ul a:focus {
+  color: #e8e4e6;
+}
+
+header ul a {
+  font-size: 24px;
+  color: #F17E6C;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.bottom-menu {
+  margin-top: auto;
+}
+
+@media only screen and (max-width: 525px) {
+  header {
+    min-width: 70px;
+  }
+}
