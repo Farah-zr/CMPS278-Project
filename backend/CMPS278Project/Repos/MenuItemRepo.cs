@@ -1,11 +1,12 @@
 using Menu.Data;
-using MenuItems.Interfaces;
+using MenuItemsRepo.Interfaces;
 using MenuItems.Models;
 using Microsoft.EntityFrameworkCore;
+using CategoryEnum.Enums;
 
 namespace MenuItems.Repos;
 
-public class MenuItemRepo : IMenuItems
+public class MenuItemRepo : IMenuItemRepo
 {
     private readonly AppDbContext _db;
 
@@ -36,13 +37,6 @@ public class MenuItemRepo : IMenuItems
             return false;
         return true;
     }
-
-    public async Task<MenuItem?> GetByCategoryAsync(string category)
-    {
-        var menuItem = await _db.MenuItems.FirstOrDefaultAsync(x => x.Category == category);
-        if (menuItem != null)
-            return menuItem;
-        return null;    }
 
     public async Task<MenuItem?> GetByIdAsync(int id)
     {

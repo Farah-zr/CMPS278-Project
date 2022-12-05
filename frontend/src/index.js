@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { createTheme } from '@mui/material/styles';
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import axios  from 'axios';
 
 const theme = createTheme({
   palette: {
@@ -27,6 +28,9 @@ const theme = createTheme({
     }
   },
 });
+
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+axios.defaults.headers.common['Access-Control-Allow-Methods'] = '*';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using MenuItems.Models;
-using MenuItems.Repos;
-using MenuItems.Interfaces;
+using CategoryEnum.Enums;
+using MenuItemsRepo.Interfaces;
+using Microsoft.AspNetCore.Cors;
 
 namespace MenuItems.Controllers;
 
@@ -9,9 +10,9 @@ namespace MenuItems.Controllers;
 [Route("/api/[controller]")]
 public class MenuItemsController : ControllerBase
 {
-    private readonly IMenuItems _repo;
+    private readonly IMenuItemRepo _repo;
 
-    public MenuItemsController(IMenuItems repo)
+    public MenuItemsController(IMenuItemRepo repo)
     {
         this._repo = repo;
     }
@@ -31,14 +32,14 @@ public class MenuItemsController : ControllerBase
         return Ok(menuItem);
     }
 
-    [HttpGet("{category:string}")]
-    public async Task<IActionResult> GetMenuItemByCategory(string category)
-    {
-        var menuItem = await _repo.GetByCategoryAsync(category);
-        if (menuItem == null)
-            return NotFound();
-        return Ok(menuItem);
-    }
+    // [HttpGet("{category:int}")]
+    // public async Task<IActionResult> GetMenuItemByCategory(Category category)
+    // {
+    //     var menuItem = await _repo.GetByCategoryAsync(category);
+    //     if (menuItem == null)
+    //         return NotFound();
+    //     return Ok(menuItem);
+    // }
 
     [HttpPost]
     public async Task<ActionResult<MenuItem>> AddMenuItem(MenuItem menuItem)
@@ -58,12 +59,12 @@ public class MenuItemsController : ControllerBase
         return BadRequest();
     }
 
-    [HttpPut("{id:int}")]
-    public async Task<IActionResult> UpdateCar(int id, MenuItem menuItem)
-    {
-        var updatedMenuItem = await _repo.UpdateMenuItemAsync(menuItem, id);
-        if (updatedMenuItem != null) return
-            Ok(updatedMenuItem);
-        return BadRequest();
-    }
+    // [HttpPut("{id:int}")]
+    // public async Task<IActionResult> UpdateCar(int id, MenuItem menuItem)
+    // {
+    //     var updatedMenuItem = await _repo.UpdateMenuItemAsync(menuItem, id);
+    //     if (updatedMenuItem != null) return
+    //         Ok(updatedMenuItem);
+    //     return BadRequest();
+    // }
 }

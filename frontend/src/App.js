@@ -1,10 +1,10 @@
 import "./App.css";
 import SideBar from "./Components/bars/SideBar";
 import Container from "./Components/Container";
-import AfricanFood from "./Components/menu/AfricanFood";
-import ChineseFood from "./Components/menu/ChineseFood";
-import ItalianFood from "./Components/menu/ItalianFood";
-import DesertFood from "./Components/menu/DesertFood";
+import CakePopsMenu from "./Components/menu/CakePopsMenu";
+import BrowniesMenu from "./Components/menu/BrowniesMenu";
+import CinnamonRollsMenu from "./Components/menu/CinnamonRollsMenu";
+import CookiesMenu from "./Components/menu/CookiesMenu";
 import Help from "./Components/FAQ/Help";
 import Profile from "./Components/user/Profile";
 import ComingSoon from "./Components/ComingSoon";
@@ -23,10 +23,10 @@ function App() {
           {/* <Container /> */}
           <Routes>
             <Route path="/" element={<Container />} />
-            <Route path="/african" element={<AfricanFood />} />
-            <Route path="/chinese" element={<ChineseFood />} />
-            <Route path="/italian" element={<ItalianFood />} />
-            <Route path="/desert" element={<DesertFood />} />
+            <Route path="/cakePops" element={<CakePopsMenu />} />
+            <Route path="/brownies" element={<BrowniesMenu />} />
+            <Route path="/cinnamonRolls" element={<CinnamonRollsMenu />} />
+            <Route path="/cookies" element={<CookiesMenu />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />

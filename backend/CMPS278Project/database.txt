@@ -1,1 +1,11 @@
+Id	Category	Name	Description	Price
+1	Cake Pops	Chocolate Caramel	moist and fudgy chocolate cake pop filled with caramel toffee dipped in chocolate and topped with salted crushed pretzels	50000
+2	Cake Pops	The Peanut Butter Chocolate	moist and fudgy chocolate cake pop filled with peanut butter dipped in chocolate and topped with caramelized peanut brittle	50000
+3	Cake Pops	Rainbow Cake Pop		50000
+4	Cake Pops	Chocolate  	chocolate cake pop dipped in milk chocolate	45000
+5	Cake Pops	Vanilla	vanilla cake pop dipped in white chocolate	45000
+6	Cake Pops	Cookie Dough Nutella	cookie dough cake pop filled with nutella dipped in milk chocolate	55000
+7	Cake Pops	Red Velvet	red velvet cake pop dipped in milk chocolate	45000
+8	Cake Pops	Cookie Dough  	cookie dough cake pop dipped in milk chocolate	46000
+9	Cake Pops	Red Velvet Nutella	red velvet cake pop filled with nutella dipped in milk chocolate	55000
 
