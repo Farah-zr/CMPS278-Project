@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CMPS278Project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221205203458_MenuItems")]
+    [Migration("20221209211958_MenuItems")]
     partial class MenuItems
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -155,6 +155,23 @@ namespace CMPS278Project.Migrations
                             Name = "Red Velvet Nutella",
                             Price = 55000
                         });
+                });
+
+            modelBuilder.Entity("CartItems.Models.CartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("MenuItemId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CartItems");
                 });
 
             modelBuilder.Entity("CinnamonRolls.Models.CinnamonRoll", b =>

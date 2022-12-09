@@ -155,6 +155,23 @@ namespace CMPS278Project.Migrations
                         });
                 });
 
+            modelBuilder.Entity("CartItems.Models.CartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("MenuItemId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CartItems");
+                });
+
             modelBuilder.Entity("CinnamonRolls.Models.CinnamonRoll", b =>
                 {
                     b.Property<int>("Id")

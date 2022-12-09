@@ -18,6 +18,8 @@ using CookiesRepo.Interfaces;
 using Cookies.Repos;
 using CupcakesRepo.Interfaces;
 using Cupcakes.Repos;
+using CartItemsRepo.Interfaces;
+using CartItems.Repos;
 using Microsoft.AspNetCore.Cors;
 
 
@@ -57,6 +59,7 @@ builder.Services.AddScoped<IBrownieRepo, BrownieRepo>();
 builder.Services.AddScoped<ICinnamonRollRepo, CinnamonRollRepo>();
 builder.Services.AddScoped<ICookieRepo, CookieRepo>();
 builder.Services.AddScoped<ICupcakeRepo, CupcakeRepo>();
+builder.Services.AddScoped<ICartItemRepo, CartItemRepo>();
 
 var app = builder.Build();
 

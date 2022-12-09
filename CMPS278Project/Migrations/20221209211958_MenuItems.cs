@@ -39,6 +39,20 @@ namespace CMPS278Project.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CartItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Quantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    MenuItemId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CartItems", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CinnamonRolls",
                 columns: table => new
                 {
@@ -427,6 +441,9 @@ namespace CMPS278Project.Migrations
 
             migrationBuilder.DropTable(
                 name: "CakePops");
+
+            migrationBuilder.DropTable(
+                name: "CartItems");
 
             migrationBuilder.DropTable(
                 name: "CinnamonRolls");
