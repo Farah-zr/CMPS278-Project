@@ -45,23 +45,6 @@ function AllMenuItems() {
         setQuantity(1);
     };
 
-    // const handleAddCartitem = (e) => {
-    //     // e.preventDefault(); 
-    //     const cartItem = {
-    //         quantity: quantity,
-    //         menuItemId: id
-    //     };
-    //     fetch("https://localhost:8000/cartItems", {
-    //         method: "POST",
-    //         headers: {"Content-Type": "application/json"}, 
-    //         body: JSON.stringify(cartItem)
-    //     }).then((res) => {
-    //         console.log(res);
-    //     })
-    //     setOpen(false);
-    //     setQuantity(1);
-    // };
-
     // Increase Quantity
     const AddQuantity = (e) => {
         e.preventDefault();
@@ -98,47 +81,17 @@ function AllMenuItems() {
         setQuantity(1);
     }
 
-    // const addItem = async () => {
-    //     const cartItem = {
-    //       quantity: quantity,
-    //       menuItemId: id
-    //     };
-    
-    //     await axios({
-    //       method: 'POST',
-    //       url: 'https://localhost:7277/api/CartItems',
-    //       data: cartItem,
-    //     })
-    //       .then((response) => {
-    //         console.log(response.data);
-    //       })
-    //       .catch((e) => {
-    //         console.log(e);
-    //       });
-    //   };
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const CartItem = { quantity, id };
-    //     fetch('/api/CartItems', {
-    //       method: 'POST',
-    //       headers: { 'Content-Type': 'application/json' },
-    //       body: JSON.stringify(CartItem),
-    //     });
-    //   };
-      
-
     return (
         <>
             <div className="w-full mx-auto align">
                 {items && (
                     <>
-                        <Grid container spacing={1} sx={{ p: 1 }}>
+                        <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
                             {items.map((item) => {
                                 return(
                                     <>
                                         <Grid item>
-                                            <Card sx={{ width: 200, height: 270, m: 2, backgroundColor: "#fffffe" }}>
+                                            <Card sx={{ width: 200, height: 270, m: 1, backgroundColor: "#fffffe" }}>
                                                 <CardActionArea component={Button} sx={{ textTransform: 'capitalize', height: 'fitContent' }} button-key={item.id} onClick={(e) => handleClickOpen(e)}>
                                                     <CardMedia
                                                         component="img"
@@ -211,7 +164,7 @@ function AllMenuItems() {
                                         </DialogContent>
                                         <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                             <TextButton onClick={handleClose}>Cancel</TextButton>
-                                            <TextButton type="submit" onClick={handleAddCartitem}>Add to Cart</TextButton>
+                                            <TextButton onClick={handleAddCartitem}>Add to Cart</TextButton>
                                         </DialogActions>
                                     </ItemDialog>
                                   ))

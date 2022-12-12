@@ -5,15 +5,6 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Dial
 
 function Brownies() {
 
-    // const ColorButton = styled(Button)(({ theme }) => ({
-    //     color: "#121629",
-    //     backgroundColor: "#eebbc3",
-    //     '&:hover': {
-    //       backgroundColor: "#EF9DAA",
-    //     //   color: '#fffffe'
-    //     },
-    //   }));
-
     const TextButton = styled(Button)(({ theme }) => ({
     color: "#EF9DAA",
     '&:hover': {
@@ -52,22 +43,27 @@ function Brownies() {
     const handleClose = () => {
         setOpen(false);
         setQuantity(1);
-
     };
 
     const handleAddCartitem = (e) => {
-        // e.preventDefault(); 
+        // e.preventDefault();
         const cartItem = {
             quantity: quantity,
             menuItemId: id
         };
-        // fetch("https://localhost:8000/cartItems", {
-        //     method: "POST",
-        //     headers: {"Content-Type": "application/json"}, 
-        //     body: JSON.stringify(cartItem)
-        // }).then((res) => {
-        //     console.log(res);
-        // })
+        axios({
+            method: 'POST',
+            url: 'https://localhost:5001/api/CartItems',
+            data: cartItem,
+          })
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
         setOpen(false);
         setQuantity(1);
     };
@@ -90,12 +86,12 @@ function Brownies() {
             <div className="w-full mx-auto align">
                 {items && (
                     <>
-                        <Grid container spacing={1} sx={{ p: 1 }}>
+                        <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
                             {items.map((item) => {
                                 return(
                                     <>
                                         <Grid item>
-                                            <Card sx={{ width: 200, height: 270, m: 2, backgroundColor: "#fffffe" }} key={item.id}>
+                                            <Card sx={{ width: 200, height: 270, m: 1, backgroundColor: "#fffffe" }}>
                                                 <CardActionArea component={Button} sx={{ textTransform: 'capitalize', height: 'fitContent' }} button-key={item.id} onClick={(e) => handleClickOpen(e)}>
                                                     <CardMedia
                                                         component="img"

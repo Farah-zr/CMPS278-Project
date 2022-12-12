@@ -1,3 +1,4 @@
+import { Box, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { IoRestaurant } from "react-icons/io5";
 import "./styles/comingsoon.css";
@@ -12,8 +13,8 @@ const ComingSoon = () => {
 
         if (difference > 0) {
             timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                days:    Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours:   Math.floor((difference / (1000 * 60 * 60)) % 24),
                 minutes: Math.floor((difference / 1000 / 60) % 60),
                 seconds: Math.floor((difference / 1000) % 60)
             };
@@ -49,19 +50,32 @@ const ComingSoon = () => {
 
     return (
         <>
-
             <div className="bgimg">
-                <div className="logo-cont">
-                    <IoRestaurant className="the-logo" />
-                </div>
                 <div className="coming-soon-container">
-                    <h2>OPENING SOON!!</h2>
-                    <p className="top-p">Grand opening of Prime Cuisine Restaurant. Huge discounts for first 100 reservations.</p>
-                    <hr/>
-                    <p className="bottom-p">Coming soon in: {timerComponents.length ? timerComponents : <span>We're Open! 🔥</span>}</p>
-                    <p className="bottom-p">Launching: December {year}</p>
+                    <Box sx={{
+                        width: 500,
+                        height: 250,
+                        backgroundColor: '#fffffe',
+                        opacity: 0.7,
+                        p: 2
+                    }}>
+                        <Typography variant='h5' sx={{ color: '#121629', mb: 1 }}>
+                            Better from Scratch is a fun & vibrant dessert parlor that offers a wide range of baked goods that fit any occasion!
+                        </Typography>
+                        <Typography variant='body1' sx={{ color: '#121629', fontSize: 15 }}>
+                            Tel: +961 1 360 205 
+                        </Typography>
+                        <Typography variant='body1' sx={{ color: '#121629', fontSize: 15 }}>
+                            Mobile: +961 78 965285 
+                        </Typography>
+                        <Typography variant='body1' sx={{ color: '#121629', fontSize: 15 }}>
+                            Address: Clemenceau, Beirut - Lebanon
+                        </Typography>
+                        <Typography variant='body1' sx={{ color: '#121629', fontSize: 15 }}>
+                            Email: contact@better-from-scratch.com
+                        </Typography>
+                    </Box>
                 </div>
-                <div className="bottom"> </div>
             </div>
         </>
     )

@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/foodContainer.css";
-import { Box, Button, IconButton, styled, Typography } from "@mui/material";
+import { Box, Button, Container, IconButton, styled, Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import { useEffect } from "react";
@@ -18,51 +19,30 @@ function Cart() {
 
   const [cartItems, setCartItems] = React.useState([]);
   const [items, setItems] = React.useState([]);
-
-  // if using original db, this would be the code:
+  const [state, setState] = React.useState(0);
 
   useEffect(() => {
     axios
       .get(`https://localhost:5001/api/CartItems`)
       .then((res) => {
         setCartItems(res.data);
-        console.log(res.data);
-        console.log(cartItems);
       })
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, [state]);
 
-
-  // using json server bc of the cors bug
-  // useEffect(() => {
-  //   fetch('https://localhost:8000/cartItems')
-  //     .then((res) => {
-  //         if(!res.ok) {
-  //           throw Error("could not fetch the data");
-  //       }
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       setCartItems(data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
-
-
-//   const handleDelete = (e) => {
-//     var id = e.currentTarget.getAttribute('button-key');
-//     cartItems.filter((data) => data.menuItemId == id)
-//               .map((deletedItem) => {
-//                 console.log(deletedItem.id);
-//                 fetch("https://localhost:8000/cartItems/" + deletedItem.id, {
-//                     method: "DELETE"    
-//                 })
-//               })
-// }
+  const handleDelete = (e) => {
+    var id = e.currentTarget.getAttribute('button-key');
+    cartItems.filter((data) => data.menuItemId == id)
+              .map((deletedItem) => {
+                console.log(deletedItem.id);
+                fetch("https://localhost:5001/api/CartItems/" + deletedItem.id, {
+                    method: "DELETE"    
+                })
+              });   
+    setState(n => n + 1);
+}
   
   useEffect(() => {
     axios
@@ -94,70 +74,87 @@ function Cart() {
           })
   });
 
-  // var empty = true;
-  // if (listOfCartItems.length !== 0) empty = false;
-
   return (
     <>
-        <div>
-          <Box className="cart">
+      <div className="foodcontainer">
+        <Container maxWidth="sm">
+          <Box sx={{ backgroundColor: '#d4d8f0', height: '98%', width: '100%', mx: 5, boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.4)', borderRadius: '7px' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.4)', pt: 1 }}>
+                <IconButton
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    component={Link} 
+                    to="/" 
+                    sx={{ ml: 1 }}
+                >
+                    <ArrowBackIosIcon />
+                </IconButton>
+                <Typography variant="h5" sx={{ flexGrow: 1, textAlign: 'center', color: '#121629' }}>
+                    My Cart
+                </Typography>
+            </Box>
+            
             <div className="labels">
-              <h5>Item</h5>
-              <h5>Quantity</h5>
-              <h5>Price</h5>
+              <h4>Item</h4>
+              <h4>Quantity</h4>
+              <h4>Price</h4>
             </div>
 
-            {/* {empty && (
-              <Box className="item">
-              <div className="item-details">
-                <Typography sx={{ fontWeight: 600, fontSize: 16, color: '#121629' }}>Cart is empty</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ height: '300px' }}>
+                {
+                  listOfCartItems && (
+                    listOfCartItems.map((item) =>{
+                      i++;
+                      return(
+                        <Box className="item" sx={{ backgroundColor: '#fffffe', boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.4)', borderRadius: '5px', mx: 5, mb: 3, p: 1 }}>
+                          <div className="item-details">
+                            <div className="item-name">
+                              <b>{item.name}</b>
+                              <p>LBP {item.price}</p>
+                            </div>
+                            <div className="item-quantity">
+                              <p className="qty-box">{quantities[i]}</p>
+                            </div>
+                            <div className="item-price">
+                              <p>LBP {item.price * quantities[i]}</p>
+                              <IconButton button-key={item.id} onClick={(e) => handleDelete(e)} className="trash-box" aria-label="delete">
+                                <DeleteIcon />
+                              </IconButton>
+                            </div>
+                          </div>
+                        </Box> 
+                      );
+                    })
+                  )
+                }
               </div>
+              <Box sx={{ backgroundColor: '#fffffe', boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.4)', borderRadius: '5px', mx: 5, my: 3, p: 1 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '15px', marginBottom: '15px', padding: '5px' }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600, ml:2 }}>
+                        Total
+                    </Typography>
+                    <Typography variant="h6" sx={{ color: '#A0A0A0', mr:2 }}>
+                        LBP {prices}
+                    </Typography>
+                </div>
               </Box>
-            )} */}
 
-            {
-              listOfCartItems && (
-                listOfCartItems.map((item) =>{
-                  i++;
-                  return(
-                    <Box className="item">
-                      <div className="item-details">
-                        <div className="item-name">
-                          <b>{item.name}</b>
-                          <p>LBP {item.price}</p>
-                        </div>
-                        <div className="item-quantity">
-                          <p className="qty-box">{quantities[i]}</p>
-                        </div>
-                        <div className="item-price">
-                          <p>LBP {item.price * quantities[i]}</p>
-                          <IconButton button-key={item.id} className="trash-box" aria-label="delete">
-                            <DeleteIcon />
-                          </IconButton>
-                        </div>
-                      </div>
-                    </Box> 
-                  );
-                })
-              )
-            }
-
-            <Box className="total">
-              <h3>Total:</h3>
-              <p>LBP {prices}</p>
+              <div className="checkout-btn">
+                <ColorButton 
+                  component={Link} 
+                  to="../checkout"  
+                  variant="contained"
+                  sx={{ width: '85%', mx: 5, my: 3, p:1 }}
+                >
+                  Checkout
+                </ColorButton>
+              </div>
             </Box>
-
-            <ColorButton 
-              component={Link} 
-              to="../checkout" 
-              className="checkout-btn" 
-              variant="contained"
-            >
-              Checkout
-            </ColorButton>
-
           </Box>
-        </div>
+        </Container>
+      </div>
     </>
   );
 }

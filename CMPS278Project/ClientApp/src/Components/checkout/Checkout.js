@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/foodContainer.css";
 import { Box, Button, Container, Divider, IconButton, styled, Typography } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -6,6 +6,7 @@ import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import PlaceIcon from '@mui/icons-material/Place';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
 function Checkout() {
 
@@ -15,7 +16,48 @@ function Checkout() {
         '&:hover': {
           backgroundColor: "#EF9DAA",
         },
-      }));
+    }));
+
+    const [cartItems, setCartItems] = React.useState([]);
+    const [items, setItems] = React.useState([]);
+
+    useEffect(() => {
+        axios
+            .get(`https://localhost:5001/api/CartItems`)
+            .then((res) => {
+            setCartItems(res.data);
+            console.log(res.data);
+            console.log(cartItems);
+            })
+            .catch((error) => {
+            console.log(error);
+            });
+    }, []);
+
+    useEffect(() => {
+        axios
+          .get(`https://localhost:5001/api/MenuItems`)
+          .then((res) => {
+            setItems(res.data);
+            console.log(res.data);
+            console.log(items);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }, []);
+    
+    var subtotal = 0;
+    var total;
+
+    cartItems.forEach(item => {
+    items.filter((data) => data.id == item.menuItemId)
+        .map((filteredItem) => {
+        subtotal += filteredItem.price * item.quantity;
+        })
+    });
+
+    total = subtotal + 30000;
 
   return (
     <>
@@ -28,7 +70,7 @@ function Checkout() {
                         edge="start"
                         color="inherit"
                         component={Link} 
-                        to="/" 
+                        to="/cart" 
                         sx={{ ml: 1 }}
                     >
                         <ArrowBackIosIcon />
@@ -83,7 +125,7 @@ function Checkout() {
                                 Subtotal
                             </Typography>
                             <Typography variant="body2" sx={{ fontSize: 14, color: '#A0A0A0' }}>
-                                LBP 650000
+                                LBP {subtotal}
                             </Typography>
                         </div>
 
@@ -103,7 +145,7 @@ function Checkout() {
                                 Total
                             </Typography>
                             <Typography variant="h6" sx={{ color: '#A0A0A0', ml:2 }}>
-                                LBP 680000
+                                LBP {total}
                             </Typography>
                         </div>
                     </Box>

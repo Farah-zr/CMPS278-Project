@@ -41,7 +41,7 @@ public class CartItemsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteCar(int id)
+    public async Task<IActionResult> DeleteCartItem(int id)
     {
         var success = await _repo.DeleteCartItemAsync(id);
         if (success)

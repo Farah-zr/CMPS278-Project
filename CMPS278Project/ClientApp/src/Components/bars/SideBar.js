@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/sidebar.css";
-import logo from "../../img/prime-logo.png";
-import { FaUser, FaSignOutAlt,} from "react-icons/fa";
+import logo from "../../img/logo-removebg-preview.png";
+import { FaUser, FaSignOutAlt, FaShoppingCart } from "react-icons/fa";
 import { IoRestaurant } from "react-icons/io5";
 import { MdDashboard } from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -18,15 +18,13 @@ const Icon = ({ icon }) => (
 function SideBar() {
   return (
     <header>
-      <img src={logo} alt="logo" />
+      <img src={logo} alt="logo" width="70px" height="100px" />
       
       <ul className="top-menu">
         <Link to="/"><Icon icon={<MdDashboard title="Menu"/>} /></Link>
-        <Link to="/profile"><Icon icon={<FaUser title="Your Profile"/>} /></Link>
-        {/* <Link to="/chat"><Icon icon={<IoChatbubbleEllipsesSharp title="Chat with sales rep"/>} /></Link> */}
+        <Link to="/cart"><Icon icon={<FaShoppingCart title="Cart"/>} /></Link>
         <Link to="/comingsoon"><Icon icon={<IoRestaurant title="About us"/>} /></Link>
-        {/* <Link to="/help"><Icon icon={<IoIosHelpCircle title="FAQs"/>} /></Link> */}
-        {/* <Icon icon={<FaCog title="Settings"/>} /> */}
+        <Link to="/profile"><Icon icon={<FaUser title="Profile"/>} /></Link>
       </ul>
 
       <ul className="bottom-menu">

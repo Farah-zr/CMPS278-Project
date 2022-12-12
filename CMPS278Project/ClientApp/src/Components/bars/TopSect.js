@@ -9,11 +9,11 @@ function TopSect() {
     <div className="top-section">
       <div>
         <div style={{ display: 'flex' }}>
-          <Typography variant="h5" sx={{ color: '#eebbc3', mx:1 }}>Better From Scratch</Typography>
+          <Typography variant="h5" sx={{ color: '#eebbc3', mx:1 }}>Better from Scratch</Typography>
           <CookieIcon sx={{ color: '#eebbc3', mt:0.5 }} />
         </div>
         <div>
-        <Typography variant="body2" sx={{ color: '#fffffe', fontStyle: 'italic', fontSize: 13, mx:2 }}>from our kitchen to yours</Typography>
+        <Typography variant="body2" sx={{ color: '#fffffe', fontStyle: 'italic', fontSize: 13, mx:1 }}>we deliver joy and happiness in a box to your doorstep</Typography>
         </div>
       </div>
 

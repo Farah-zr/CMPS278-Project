@@ -13,6 +13,7 @@ import Modal from "./Components/Modal";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Checkout from "./Components/checkout/Checkout";
 import ThankYou from "./Components/checkout/thankYou";
+import Cart from "./Components/cart/Cart";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/cinnamonRolls" element={<CinnamonRollsMenu />} />
             <Route path="/cookies" element={<CookiesMenu />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/thanku" element={<ThankYou />} />
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />

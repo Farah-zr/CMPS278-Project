@@ -59,7 +59,6 @@ function FoodContainer() {
                 <CustomizedTab label="Cinnamon Rolls" />
                 <CustomizedTab label="Cookies" />
                 <CustomizedTab label="Cupcakes" />
-                <CustomizedTab label="Pretzels" />
               </CustomizedTabs>
             </Box>
 
@@ -85,9 +84,9 @@ function FoodContainer() {
             </div>
         </Box>
 
-        <div className="right-side">
+        {/* <div className="right-side">
           <Cart />
-        </div>
+        </div> */}
       </div>
     </>
   );

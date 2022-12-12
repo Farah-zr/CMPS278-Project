@@ -1,6 +1,6 @@
 /* Coming soon page */
 .bgimg {
-    background-image: url("../../img/restaurant.jpg");
+    background-image: url("../../img/delicious-candy-concept-with-copy-space.jpg");
     height: 100%;
     width: 100vw;
     background-position: center;
@@ -8,8 +8,8 @@
     position: relative;
     color: white;
     font-size: 25px;
-    /* opacity: 0.55; */
-  }
+    opacity: 0.75;
+}
   
 
 .logo-cont {
@@ -25,12 +25,11 @@
 
 .coming-soon-container {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
 }
-
 
 .coming-soon-container h2{
     color: #ed482f;

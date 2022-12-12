@@ -58,17 +58,40 @@ function Cookies() {
         }
     };
 
+    const handleAddCartitem = (e) => {
+        // e.preventDefault();
+        const cartItem = {
+            quantity: quantity,
+            menuItemId: id
+        };
+        axios({
+            method: 'POST',
+            url: 'https://localhost:5001/api/CartItems',
+            data: cartItem,
+          })
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+        setOpen(false);
+        setQuantity(1);
+    };
+
     return (
         <>
             <div className="w-full mx-auto align">
                 {items && (
                     <>
-                        <Grid container spacing={1} sx={{ p: 1 }}>
+                        <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
                             {items.map((item) => {
                                 return(
                                     <>
                                         <Grid item>
-                                            <Card sx={{ width: 200, height: 270, m: 2, backgroundColor: "#fffffe" }}>
+                                            <Card sx={{ width: 200, height: 270, m: 1, backgroundColor: "#fffffe" }}>
                                                 <CardActionArea component={Button} sx={{ textTransform: 'capitalize', height: 'fitContent' }} button-key={item.id} onClick={(e) => handleClickOpen(e)}>
                                                     <CardMedia
                                                         component="img"
@@ -141,7 +164,7 @@ function Cookies() {
                                         </DialogContent>
                                         <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                             <TextButton onClick={handleClose}>Cancel</TextButton>
-                                            <TextButton onClick={handleClose}>Add to Cart</TextButton>
+                                            <TextButton onClick={handleAddCartitem}>Add to Cart</TextButton>
                                         </DialogActions>
                                     </ItemDialog>
                                   ))

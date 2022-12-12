@@ -8,11 +8,13 @@
 }
 
 .foodcontainer .left-side {
-  width: calc(100% - 30%);
+  width: 100%;
   background: #d4d8f0;
   height: 93%;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
   border-radius: 7px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -42,16 +44,20 @@
   margin: 5px;
 }
 
-.cart .labels {
+.labels {
   color: #121629;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   min-width: 270px;
-  margin: 3px 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 24px;
+  margin-bottom: 15px;
+  font-size: large;
 }
 
-.cart .item {
+.item {
   margin: 8px 0;
   padding: 10px;
   display: flex;
@@ -63,7 +69,7 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
-.cart .item .item-details {
+.item .item-details {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
@@ -71,22 +77,22 @@
   align-items: center;
 }
 
-.cart .item .item-details .item-name {
+.item .item-details .item-name {
   width: 120px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.cart .item .item-quantity {
+.item .item-quantity {
   width: 100px;
 }
 
-.cart .item .item-price {
+.item .item-price {
   max-width: 200px;
 }
 
-.cart .item .qty-box {
+.item .qty-box {
   padding: 7px 10px;
   width: 40px;
   height: 30px;
@@ -98,7 +104,7 @@
   border-radius: 7px;
 }
 
-.cart .item .item-details .trash-box {
+.item .item-details .trash-box {
   padding: 5px;
   width: 30px;
   height: 30px;
@@ -113,12 +119,12 @@
   font-size: 15px;
 }
 
-.cart .item .item-details .trash-box:hover {
+.item .item-details .trash-box:hover {
   color: #EF9DAA;
   border: 1px solid #EF9DAA;
 }
 
-.cart .total {
+.total {
   display: flex;
   justify-content: space-between;
   min-width: 240px;
@@ -129,7 +135,7 @@
   color: #121629;
 }
 
-.cart .checkout-btn {
+.checkout-btn {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
