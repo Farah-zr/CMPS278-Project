@@ -1,9 +1,8 @@
 import React from "react";
 import "../styles/sidebar.css";
 import logo from "../../img/prime-logo.png";
-import { FaCog, FaUser, FaSignOutAlt,} from "react-icons/fa";
-import { IoChatbubbleEllipsesSharp, IoRestaurant } from "react-icons/io5";
-import { IoIosHelpCircle } from "react-icons/io";
+import { FaUser, FaSignOutAlt,} from "react-icons/fa";
+import { IoRestaurant } from "react-icons/io5";
 import { MdDashboard } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
@@ -22,12 +21,12 @@ function SideBar() {
       <img src={logo} alt="logo" />
       
       <ul className="top-menu">
-        <Link to="/"><Icon icon={<MdDashboard title="Order"/>} /></Link>
+        <Link to="/"><Icon icon={<MdDashboard title="Menu"/>} /></Link>
         <Link to="/profile"><Icon icon={<FaUser title="Your Profile"/>} /></Link>
-        <Link to="/chat"><Icon icon={<IoChatbubbleEllipsesSharp title="Chat with sales rep"/>} /></Link>
-        <Link to="/comingsoon"><Icon icon={<IoRestaurant title="Book a seat"/>} /></Link>
-        <Link to="/help"><Icon icon={<IoIosHelpCircle title="FAQs"/>} /></Link>
-        <Icon icon={<FaCog title="Settings"/>} />
+        {/* <Link to="/chat"><Icon icon={<IoChatbubbleEllipsesSharp title="Chat with sales rep"/>} /></Link> */}
+        <Link to="/comingsoon"><Icon icon={<IoRestaurant title="About us"/>} /></Link>
+        {/* <Link to="/help"><Icon icon={<IoIosHelpCircle title="FAQs"/>} /></Link> */}
+        {/* <Icon icon={<FaCog title="Settings"/>} /> */}
       </ul>
 
       <ul className="bottom-menu">

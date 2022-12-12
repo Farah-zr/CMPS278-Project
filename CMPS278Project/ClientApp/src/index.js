@@ -29,10 +29,9 @@ const theme = createTheme({
   },
 });
 
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'https://localhost:44451';
-// axios.defaults.headers.common['Access-Control-Allow-Methods'] = 'Get, Post, Delete';
-// axios.defaults.headers.common['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Auth-Token';
-// axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+axios.defaults.headers.common['Access-Control-Allow-Methods'] = '*';
+axios.defaults.headers.common['Access-Control-Allow-Headers'] = '*';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -43,4 +42,3 @@ root.render(
     </ThemeProvider>
   </React.StrictMode>
 );
-

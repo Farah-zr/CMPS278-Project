@@ -19,8 +19,8 @@
 //                                 builder  =>
 //                                 {
 //                                     builder.WithOrigins("https://localhost:44451",
-//                                                         "http://localhost:5119",
-//                                                         "https://localhost:7277")
+//                                                         "https://localhost:5000",
+//                                                         "https://localhost:5001")
 //                                                             .AllowAnyHeader()
 //                                                             .AllowAnyMethod();
 //                                 });

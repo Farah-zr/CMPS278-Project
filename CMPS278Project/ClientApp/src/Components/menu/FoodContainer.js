@@ -3,9 +3,12 @@ import "../styles/foodContainer.css";
 import Cart from "../cart/Cart";
 import { Box, styled, Tabs } from "@mui/material";
 import Tab from '@mui/material/Tab';
-import African from "./African";
-import Chinese from "./Chinese";
-import Italian from "./Italian";
+import CakePops from "./CakePops";
+import Brownies from "./Brownies";
+import CinnamonRolls from "./CinnamonRolls";
+import Cookies from "./Cookies";
+import Cupcakes from "./Cupcakes";
+import AllMenuItems from "./AllMenuItems";
 
 
 function FoodContainer() {
@@ -50,11 +53,10 @@ function FoodContainer() {
         <Box className="left-side">
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <CustomizedTabs value={category} onChange={handleChange} centered>
-                <CustomizedTab label="Cake Pops" />
+                <CustomizedTab label="All" />
                 <CustomizedTab label="Brownies" />
-                <CustomizedTab label="Macarons" />
+                <CustomizedTab label="Cake Pops" />
                 <CustomizedTab label="Cinnamon Rolls" />
-                <CustomizedTab label="Cinnamon Bites" />
                 <CustomizedTab label="Cookies" />
                 <CustomizedTab label="Cupcakes" />
                 <CustomizedTab label="Pretzels" />
@@ -63,13 +65,22 @@ function FoodContainer() {
 
             <div>
               {
-                category === 0 && <African />
+                category === 0 && <AllMenuItems />
               }
               {
-                category === 1 && <Chinese />
+                category === 1 && <Brownies />
               }
               {
-                category === 2 && <Italian />
+                category === 2 && <CakePops />
+              }
+              {
+                category === 3 && <CinnamonRolls />
+              }
+              {
+                category === 4 && <Cookies />
+              }
+              {
+                category === 5 && <Cupcakes />
               }
             </div>
         </Box>

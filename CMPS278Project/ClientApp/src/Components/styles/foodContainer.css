@@ -65,15 +65,28 @@
 
 .cart .item .item-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-direction: row;
-  min-width: 240px;
   padding: 5px 5px;
-  min-width: 300px;
   align-items: center;
 }
 
-.cart .item .qty-box{
+.cart .item .item-details .item-name {
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart .item .item-quantity {
+  width: 100px;
+}
+
+.cart .item .item-price {
+  max-width: 200px;
+}
+
+.cart .item .qty-box {
   padding: 7px 10px;
   width: 40px;
   height: 30px;
@@ -86,8 +99,7 @@
 }
 
 .cart .item .item-details .trash-box {
-  margin-top: 7px;
-  padding: 8px;
+  padding: 5px;
   width: 30px;
   height: 30px;
   display: flex;
@@ -122,6 +134,63 @@
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: auto;
+}
+
+.quantity-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.quantity-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-input-left, .quantity-input-right {
+  user-select: none;
+  outline: none;
+  padding: .7rem;
+  width: 3rem;
+  height: 44px;
+  font-size: 1.1rem;
+  background: #fff;
+  color: #eebbc3;
+  border: 0 solid #dbdbdb;
+  text-align: center;
+  cursor: pointer;
+}
+.quantity-input-left:hover, .quantity-input-right:hover {
+  /* background: #EF9DAA; */
+  color: #EF9DAA;
+}
+
+.quantity-input-screen {
+  width: 4rem;
+  padding: .7rem;
+  font-size: 1rem;
+  border: 0;
+  border-top: 0 solid #dbdbdb;
+  border-bottom: 0 solid #dbdbdb;
+  text-align: center;
+}
+
+.foodcontainer .place-order-btn {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+
+.foodcontainer .thank-u-block {
+  margin: auto auto;
+  color: #EF9DAA;
+  align-items: center;
+  text-align: center;
 }
 
 @media screen and (max-width: 525px) {
@@ -172,10 +241,3 @@
     padding: 0;
   }
 }
-
-
-
-
-
-
-
