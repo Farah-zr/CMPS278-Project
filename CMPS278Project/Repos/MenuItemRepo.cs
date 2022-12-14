@@ -2,7 +2,6 @@ using Menu.Data;
 using MenuItemsRepo.Interfaces;
 using MenuItems.Models;
 using Microsoft.EntityFrameworkCore;
-using CategoryEnum.Enums;
 
 namespace MenuItems.Repos;
 

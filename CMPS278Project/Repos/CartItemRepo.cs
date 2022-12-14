@@ -58,18 +58,4 @@ public class CartItemRepo : ICartItemRepo
     {
         return await _db.CartItems.ToListAsync();
     }
-
-    // public async Task<CartItem?> UpdateCartItemAsync(CartItem CartItem, int id)
-    // {
-    //     var CartItemToBeUpdated = await GetByIdAsync(id);
-        
-    //     if (CartItemToBeUpdated == null) return null;
-
-    //     CartItemToBeUpdated.Category = CartItem.Category;
-    //     CartItemToBeUpdated.Description = CartItem.Description;
-    //     CartItemToBeUpdated.Name = CartItem.Name;
-    //     CartItemToBeUpdated.Price = CartItem.Price;
-
-    //     return CartItemToBeUpdated;
-    // }
 }

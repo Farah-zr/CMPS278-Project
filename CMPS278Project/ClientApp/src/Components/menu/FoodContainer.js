@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/foodContainer.css";
-import Cart from "../cart/Cart";
 import { Box, styled, Tabs } from "@mui/material";
 import Tab from '@mui/material/Tab';
 import CakePops from "./CakePops";
@@ -83,10 +82,6 @@ function FoodContainer() {
               }
             </div>
         </Box>
-
-        {/* <div className="right-side">
-          <Cart />
-        </div> */}
       </div>
     </>
   );

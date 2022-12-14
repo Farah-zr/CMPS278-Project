@@ -16,7 +16,7 @@ function ThankYou() {
                 </Typography>
                 <FavoriteIcon sx={{ color: '#EF9DAA', fontSize: 'xx-large', pt:0.5 }} />
             </div> 
-            <Typography variant="h4">
+             <Typography variant="h4">
                 Your order will arrive soon!
             </Typography>
             <Button variant="text" component={Link} to="/menu" sx={{ mt:1, color: '#d4d8f0' }}>Go Back to Menu</Button>

@@ -8,6 +8,4 @@ public interface ICartItemRepo
     Task<CartItem?> GetByIdAsync(int id); 
     Task<CartItem?> AddCartItemAsync(CartItem CartItem);
     Task<bool> DeleteCartItemAsync(int id);
-    
-    // Task<CartItem?> UpdateCartItemAsync(CartItem CartItem, int id);
 }

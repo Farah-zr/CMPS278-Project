@@ -1,4 +1,4 @@
-import { Container, Box, Typography, TextField, FormControl, InputLabel, Input, InputAdornment, Button, styled } from "@mui/material"
+import { Container, Box, Typography, FormControl, InputLabel, Input, InputAdornment, Button, styled } from "@mui/material"
 import "../styles/foodContainer.css";
 import PermIdentity from '@mui/icons-material/PermIdentity';
 import LockOutlined from '@mui/icons-material/LockOutlined';
@@ -26,6 +26,7 @@ function Login() {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         // e.preventDefault();
@@ -40,10 +41,11 @@ function Login() {
           })
           .then(res => {
             console.log(res);
-            navigate('/');
+            navigate('/menu');
           })
           .catch((error) => {
             console.log(error);
+            setError('**Invalid Name/Password');
           });  
     }
 
@@ -55,18 +57,6 @@ function Login() {
                         Login
                     </Typography>
                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', margin: '20px' }}>
-                    {/* <TextField
-                        required
-                        id="name"
-                        label="Name"
-                        variant="standard"
-                        sx={{
-                            alignSelf: 'center',
-                            width: '300px',
-                            my: 2,
-                            mx: 2
-                        }}
-                        /> */}
                         <FormControl variant="standard" sx={{ width: '300px', mx: 1, my: 2 }}>
                             <InputLabel htmlFor="name" sx={{ fontSize: 20 }}>
                                 Name
@@ -108,6 +98,8 @@ function Login() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </FormControl>
+
+                        <span style={{ fontSize: 15, fontweight: 600, color: '#ca0b00', paddingTop: '10px', paddingBottom: '5px' }}>{error}</span>
                         <ColorButton onClick={handleSubmit} sx={{ mt: 3 }}>
                             Login
                         </ColorButton>

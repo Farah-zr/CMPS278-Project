@@ -8,7 +8,6 @@ using CartItems.Models;
 using Users.Models;
 using CategoryEnum.Enums;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Menu.Data;

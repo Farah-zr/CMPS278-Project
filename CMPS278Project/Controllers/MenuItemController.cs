@@ -33,15 +33,6 @@ public class MenuItemsController : ControllerBase
         return Ok(menuItem);
     }
 
-    // [HttpGet("{category:int}")]
-    // public async Task<IActionResult> GetMenuItemByCategory(Category category)
-    // {
-    //     var menuItem = await _repo.GetByCategoryAsync(category);
-    //     if (menuItem == null)
-    //         return NotFound();
-    //     return Ok(menuItem);
-    // }
-
     [HttpPost]
     public async Task<ActionResult<MenuItem>> AddMenuItem(MenuItem menuItem)
     {
@@ -59,13 +50,4 @@ public class MenuItemsController : ControllerBase
             return NoContent();
         return BadRequest();
     }
-
-    // [HttpPut("{id:int}")]
-    // public async Task<IActionResult> UpdateCar(int id, MenuItem menuItem)
-    // {
-    //     var updatedMenuItem = await _repo.UpdateMenuItemAsync(menuItem, id);
-    //     if (updatedMenuItem != null) return
-    //         Ok(updatedMenuItem);
-    //     return BadRequest();
-    // }
 }

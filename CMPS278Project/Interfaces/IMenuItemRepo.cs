@@ -1,5 +1,4 @@
 using MenuItems.Models;
-using CategoryEnum.Enums;
 
 namespace MenuItemsRepo.Interfaces;
 

@@ -1,7 +1,5 @@
-import { Container, Box, Typography, TextField, FormControl, InputLabel, Input, InputAdornment, Button, styled } from "@mui/material"
+import { Container, Box, Typography, FormControl, InputLabel, Input, Button, styled } from "@mui/material"
 import "../styles/foodContainer.css";
-import PermIdentity from '@mui/icons-material/PermIdentity';
-import LockOutlined from '@mui/icons-material/LockOutlined';
 import Link from '@mui/material/Link';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +29,6 @@ function Signup() {
     const [phoneNumber, setPhoneNumber] = useState('');
 
     const handleSubmit = (e) => {
-        // e.preventDefault();
         const user = {
             username,
             password,
@@ -46,7 +43,7 @@ function Signup() {
           })
           .then(res => {
             console.log(res);
-            navigate('/');
+            navigate('/menu');
           })
           .catch((error) => {
             console.log(error);
@@ -144,7 +141,7 @@ function Signup() {
                         </ColorButton>
 
                         <span style={{ fontSize: 13, color: '#939699', paddingTop: '20px', paddingBottom: '2px' }}>Already have an account?</span>
-                        <CustomizedLink sx={{ fontSize: 13, color: '#4e5052' }} underline="hover" href="login">
+                        <CustomizedLink sx={{ fontSize: 13, color: '#4e5052' }} underline="hover" href="/">
                             Login
                         </CustomizedLink>
                     </div>

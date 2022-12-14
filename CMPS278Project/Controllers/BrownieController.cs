@@ -47,13 +47,4 @@ public class BrowniesController : ControllerBase
             return NoContent();
         return BadRequest();
     }
-
-    // [HttpPut("{id:int}")]
-    // public async Task<IActionResult> UpdateCar(int id, Brownie Brownie)
-    // {
-    //     var updatedBrownie = await _repo.UpdateBrownieAsync(Brownie, id);
-    //     if (updatedBrownie != null) return
-    //         Ok(updatedBrownie);
-    //     return BadRequest();
-    // }
 }

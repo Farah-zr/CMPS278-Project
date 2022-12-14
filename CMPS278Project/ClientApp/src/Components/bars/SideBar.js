@@ -18,7 +18,7 @@ function SideBar() {
       <img src={logo} alt="logo" width="70px" height="100px" />
       
       <ul className="top-menu">
-        <Link to="/"><Icon icon={<MdDashboard title="Menu"/>} /></Link>
+        <Link to="/menu"><Icon icon={<MdDashboard title="Menu"/>} /></Link>
         <Link to="/cart"><Icon icon={<FaShoppingCart title="Cart"/>} /></Link>
         <Link to="/aboutus"><Icon icon={<IoRestaurant title="About us"/>} /></Link>
         {/* <Link to="/profile"><Icon icon={<FaUser title="Profile"/>} /></Link> */}

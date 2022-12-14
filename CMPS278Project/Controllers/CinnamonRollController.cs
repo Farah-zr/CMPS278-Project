@@ -47,13 +47,4 @@ public class CinnamonRollsController : ControllerBase
             return NoContent();
         return BadRequest();
     }
-
-    // [HttpPut("{id:int}")]
-    // public async Task<IActionResult> UpdateCar(int id, CinnamonRoll CinnamonRoll)
-    // {
-    //     var updatedCinnamonRoll = await _repo.UpdateCinnamonRollAsync(CinnamonRoll, id);
-    //     if (updatedCinnamonRoll != null) return
-    //         Ok(updatedCinnamonRoll);
-    //     return BadRequest();
-    // }
 }

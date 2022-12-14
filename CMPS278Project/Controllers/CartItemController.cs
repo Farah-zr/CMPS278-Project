@@ -48,13 +48,4 @@ public class CartItemsController : ControllerBase
             return NoContent();
         return BadRequest();
     }
-
-    // [HttpPut("{id:int}")]
-    // public async Task<IActionResult> UpdateCar(int id, CartItem CartItem)
-    // {
-    //     var updatedCartItem = await _repo.UpdateCartItemAsync(CartItem, id);
-    //     if (updatedCartItem != null) return
-    //         Ok(updatedCartItem);
-    //     return BadRequest();
-    // }
 }

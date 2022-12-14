@@ -47,13 +47,4 @@ public class CakePopsController : ControllerBase
             return NoContent();
         return BadRequest();
     }
-
-    // [HttpPut("{id:int}")]
-    // public async Task<IActionResult> UpdateCar(int id, CakePop CakePop)
-    // {
-    //     var updatedCakePop = await _repo.UpdateCakePopAsync(CakePop, id);
-    //     if (updatedCakePop != null) return
-    //         Ok(updatedCakePop);
-    //     return BadRequest();
-    // }
 }

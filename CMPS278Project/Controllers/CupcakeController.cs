@@ -47,13 +47,4 @@ public class CupcakesController : ControllerBase
             return NoContent();
         return BadRequest();
     }
-
-    // [HttpPut("{id:int}")]
-    // public async Task<IActionResult> UpdateCar(int id, Cupcake Cupcake)
-    // {
-    //     var updatedCupcake = await _repo.UpdateCupcakeAsync(Cupcake, id);
-    //     if (updatedCupcake != null) return
-    //         Ok(updatedCupcake);
-    //     return BadRequest();
-    // }
 }

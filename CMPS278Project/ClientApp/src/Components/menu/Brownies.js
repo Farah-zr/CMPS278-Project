@@ -46,7 +46,6 @@ function Brownies() {
     };
 
     const handleAddCartitem = (e) => {
-        // e.preventDefault();
         const cartItem = {
             quantity: quantity,
             menuItemId: id
@@ -129,7 +128,7 @@ function Brownies() {
                                                 <img src={require("../../img/brownies/" + filteredItem.id + ".jpg")} alt="food" height="350" width="100%" style={{ borderRadius: '5px' }} />
                                             </div>
                                             <DialogContentText>
-                                                <Typography variant="h4" sx={{ color: '#EF9DAA' }}>
+                                                 <Typography variant="h5">
                                                     {filteredItem.name}
                                                 </Typography>
                                                 <Typography variant="body1" sx={{ my: 1 }}>

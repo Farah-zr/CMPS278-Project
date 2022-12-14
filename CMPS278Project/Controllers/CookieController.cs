@@ -47,13 +47,4 @@ public class CookiesController : ControllerBase
             return NoContent();
         return BadRequest();
     }
-
-    // [HttpPut("{id:int}")]
-    // public async Task<IActionResult> UpdateCar(int id, Cookie Cookie)
-    // {
-    //     var updatedCookie = await _repo.UpdateCookieAsync(Cookie, id);
-    //     if (updatedCookie != null) return
-    //         Ok(updatedCookie);
-    //     return BadRequest();
-    // }
 }
