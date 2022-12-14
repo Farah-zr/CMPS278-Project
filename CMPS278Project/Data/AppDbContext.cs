@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Menu.Data;
 
-public class AppDbContext : IdentityUserContext<User>
+public class AppDbContext : IdentityDbContext<User>
 {
     public AppDbContext(DbContextOptions options) : base(options) { }
     public DbSet<MenuItem> MenuItems { get; set; } = null!;

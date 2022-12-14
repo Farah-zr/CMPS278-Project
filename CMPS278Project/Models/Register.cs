@@ -11,10 +11,6 @@ namespace Register.Models
         [DataType(DataType.Password)]
         public string Password { get; set; } = null!;
 
-        [Required(ErrorMessage = "Please confirm your password.")]
-        [DataType(DataType.Password)]
-        public string ConfirmPassword { get; set; } = null!;
-
         [Required]
         public string Email { get; set; } = null!;
 

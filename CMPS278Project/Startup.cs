@@ -36,7 +36,7 @@ public class Startup {
                 options.AddDefaultPolicy(
                                 builder  =>
                                 {
-                                    builder.WithOrigins("https://localhost:5000",
+                                    builder.WithOrigins("https://localhost:5001",
                                                         "http://localhost:5000")
                                                             .AllowAnyHeader()
                                                             .AllowAnyMethod()
@@ -55,7 +55,7 @@ public class Startup {
             }
         );
 
-        services.AddIdentityCore<User>(options => {
+        services.AddIdentity<User, IdentityRole>(options => {
                 options.SignIn.RequireConfirmedAccount = false;
                 options.User.RequireUniqueEmail = true;
                 options.Password.RequireDigit = false;
@@ -106,12 +106,17 @@ public class Startup {
         app.UseAuthentication();
         app.UseAuthorization();
 
-        app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+        // app.UseEndpoints(endpoints =>
+        //     {
+        //         endpoints.MapControllers();
+        //     });
             
-        app.MapRazorPages();
+        // app.MapRazorPages();
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller}/{action=Index}/{id?}");
+
+        app.MapFallbackToFile("index.html");
         app.Run();
     }
 }

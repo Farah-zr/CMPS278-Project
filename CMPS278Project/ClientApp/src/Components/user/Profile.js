@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { collection, onSnapshot } from "firebase/firestore";
 import "../styles/profile.css";
 import { motion } from 'framer-motion';
+import SideBar from '../bars/SideBar';
 
 
 const loaderVariants = {
@@ -53,7 +54,7 @@ const Home = () => {
 
 
     return (
-        <>
+        <> <SideBar />
             <section>
                 <section>
                     <section className="profile-container">

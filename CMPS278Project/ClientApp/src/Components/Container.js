@@ -2,14 +2,16 @@ import React from "react";
 import "./styles/container.css";
 import TopSect from "./bars/TopSect";
 import FoodContainer from "./menu/FoodContainer";
+import SideBar from "./bars/SideBar";
 
 
 function Container() {
   return (
-    <div className="container">
+    
+    <><SideBar /><div className="container">
       <TopSect />
       <FoodContainer />
-    </div>
+    </div></>
   );
 }
 

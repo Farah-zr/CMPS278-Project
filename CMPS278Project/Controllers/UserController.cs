@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Users.Models;
 using Register.Models;
+using Login.Models;
 using JwtServices.Services;
 using Authentication.Models;
 
@@ -13,14 +14,16 @@ namespace Users.Controllers
     public class UsersController : ControllerBase
     {
         private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
         private readonly JwtService _jwtService;
 
-        public UsersController(UserManager<User> userManager, JwtService jwtService) {
+        public UsersController(UserManager<User> userManager, SignInManager<User> signInMngr, JwtService jwtService) {
             _userManager = userManager;
             _jwtService = jwtService;
+            _signInManager = signInMngr;
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<ActionResult<RegisterUser>> PostUser(RegisterUser registerUser)
         {
             if (!ModelState.IsValid)
@@ -41,6 +44,25 @@ namespace Users.Controllers
             // registerUser.Password = null;
             // return Created("", registerUser);
             return CreatedAtAction("GetUser", new { username = registerUser.UserName }, registerUser);
+        }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<LoginUser>> Login(LoginUser loginUser)
+        {
+            var user = await _userManager.FindByNameAsync(loginUser.UserName);
+            if (user == null) return Unauthorized();
+
+            var result = await _signInManager.CheckPasswordSignInAsync(user, loginUser.Password, false);
+
+            if (result.Succeeded) return loginUser;
+
+            return Unauthorized();
+        }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> LogOut() {
+            await _signInManager.SignOutAsync();
+            return Ok();
         }
 
         [HttpGet("{username}")]

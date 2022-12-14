@@ -6,6 +6,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import { useEffect } from "react";
+import SideBar from "../bars/SideBar";
 
 function Cart() {
 
@@ -75,7 +76,7 @@ function Cart() {
   });
 
   return (
-    <>
+    <><SideBar />
       <div className="foodcontainer">
         <Container maxWidth="sm">
           <Box sx={{ backgroundColor: '#d4d8f0', height: '98%', width: '100%', mx: 5, boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.4)', borderRadius: '7px' }}>
@@ -85,7 +86,7 @@ function Cart() {
                     edge="start"
                     color="inherit"
                     component={Link} 
-                    to="/" 
+                    to="/menu" 
                     sx={{ ml: 1 }}
                 >
                     <ArrowBackIosIcon />

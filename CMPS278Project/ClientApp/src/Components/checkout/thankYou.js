@@ -19,7 +19,7 @@ function ThankYou() {
             <Typography variant="h4">
                 Your order will arrive soon!
             </Typography>
-            <Button variant="text" component={Link} to="/" sx={{ mt:1, color: '#d4d8f0' }}>Go Back to Menu</Button>
+            <Button variant="text" component={Link} to="/menu" sx={{ mt:1, color: '#d4d8f0' }}>Go Back to Menu</Button>
         </div>
       </div>
     </>

@@ -7,6 +7,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import SideBar from "../bars/SideBar";
 
 function Checkout() {
 
@@ -61,6 +62,7 @@ function Checkout() {
 
   return (
     <>
+    <SideBar />
       <div className="foodcontainer">
         <Container maxWidth="sm">
             <Box sx={{ backgroundColor: '#d4d8f0', height: '98%', width: '100%', mx: 5, boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.4)', borderRadius: '7px' }}>
