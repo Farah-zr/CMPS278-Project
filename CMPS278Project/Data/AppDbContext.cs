@@ -5,12 +5,15 @@ using CinnamonRolls.Models;
 using Cookies.Models;
 using Cupcakes.Models;
 using CartItems.Models;
+using Users.Models;
 using CategoryEnum.Enums;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Menu.Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityUserContext<User>
 {
     public AppDbContext(DbContextOptions options) : base(options) { }
     public DbSet<MenuItem> MenuItems { get; set; } = null!;
@@ -23,6 +26,8 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        base.OnModelCreating(builder);
+
         builder.Entity<CakePop>().ToTable("CakePops").HasData(
             new CakePop { Id = 1, Name = "Chocolate Caramel", Description = "moist and fudgy chocolate cake pop filled with caramel toffee dipped in chocolate and topped with salted crushed pretzels", Price = 50000 },
             new CakePop { Id = 2, Name = "The Peanut Butter Chocolate", Description = "moist and fudgy chocolate cake pop filled with peanut butter dipped in chocolate and topped with caramelized peanut brittle", Price = 50000 },

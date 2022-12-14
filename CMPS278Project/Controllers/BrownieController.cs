@@ -40,7 +40,7 @@ public class BrowniesController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteCar(int id)
+    public async Task<IActionResult> DeleteBrownie(int id)
     {
         var success = await _repo.DeleteBrownieAsync(id);
         if (success)

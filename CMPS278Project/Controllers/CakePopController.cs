@@ -40,7 +40,7 @@ public class CakePopsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteCar(int id)
+    public async Task<IActionResult> DeleteCakePop(int id)
     {
         var success = await _repo.DeleteCakePopAsync(id);
         if (success)

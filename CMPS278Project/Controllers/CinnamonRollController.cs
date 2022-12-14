@@ -40,7 +40,7 @@ public class CinnamonRollsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteCar(int id)
+    public async Task<IActionResult> DeleteCinnamonRoll(int id)
     {
         var success = await _repo.DeleteCinnamonRollAsync(id);
         if (success)

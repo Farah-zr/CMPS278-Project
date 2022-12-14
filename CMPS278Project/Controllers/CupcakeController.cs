@@ -40,7 +40,7 @@ public class CupcakesController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteCar(int id)
+    public async Task<IActionResult> DeleteCupcake(int id)
     {
         var success = await _repo.DeleteCupcakeAsync(id);
         if (success)

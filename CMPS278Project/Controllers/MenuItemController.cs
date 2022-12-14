@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MenuItems.Models;
-using CategoryEnum.Enums;
 using MenuItemsRepo.Interfaces;
-using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MenuItems.Controllers;
 
@@ -17,12 +16,14 @@ public class MenuItemsController : ControllerBase
         this._repo = repo;
     }
 
+    // [Authorize]
     [HttpGet]
     public async Task<ActionResult<List<MenuItem>>> GetAllMenuItems()
     {
         return Ok(await _repo.GetMenuItemsAsync());
     }
 
+    // [Authorize]
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetMenuItemById(int id)
     {
@@ -51,7 +52,7 @@ public class MenuItemsController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteCar(int id)
+    public async Task<IActionResult> DeleteMenuItem(int id)
     {
         var success = await _repo.DeleteMenuItemAsync(id);
         if (success)

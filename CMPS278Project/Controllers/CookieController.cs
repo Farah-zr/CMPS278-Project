@@ -40,7 +40,7 @@ public class CookiesController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> DeleteCar(int id)
+    public async Task<IActionResult> DeleteCookie(int id)
     {
         var success = await _repo.DeleteCookieAsync(id);
         if (success)
