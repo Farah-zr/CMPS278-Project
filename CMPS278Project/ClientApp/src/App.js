@@ -8,6 +8,7 @@ import ThankYou from "./Components/checkout/thankYou";
 import Cart from "./Components/cart/Cart";
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Signup";
+import Search from "./Components/search/search";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/thanku" element={<ThankYou />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </Router>
       </div>

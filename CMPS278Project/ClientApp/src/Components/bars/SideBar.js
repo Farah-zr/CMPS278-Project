@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/sidebar.css";
 import logo from "../../img/logo-removebg-preview.png";
 import { FaUser, FaSignOutAlt, FaShoppingCart } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { IoRestaurant } from "react-icons/io5";
 import { MdDashboard } from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -20,8 +21,8 @@ function SideBar() {
       <ul className="top-menu">
         <Link to="/menu"><Icon icon={<MdDashboard title="Menu"/>} /></Link>
         <Link to="/cart"><Icon icon={<FaShoppingCart title="Cart"/>} /></Link>
+        <Link to="/search"><Icon icon={<FaSearch  title="Search"/>} /></Link>
         <Link to="/aboutus"><Icon icon={<IoRestaurant title="About us"/>} /></Link>
-        {/* <Link to="/profile"><Icon icon={<FaUser title="Profile"/>} /></Link> */}
       </ul>
 
       <ul className="bottom-menu">
