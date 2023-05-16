@@ -16,19 +16,19 @@ const AboutUs = () => {
                         p: 2
                     }}>
                         <Typography variant='h5' sx={{ color: '#121629', mb: 1 }}>
-                            Better from Scratch is a fun & vibrant dessert parlor that offers a wide range of baked goods that fit any occasion!
+                            Sweet Treats is a fun & vibrant bake shop that offers a wide range of baked goods that fit any occasion!
                         </Typography>
                         <Typography variant='body1' sx={{ color: '#121629', fontSize: 15 }}>
-                            Tel: +961 1 360 205 
+                            Tel: +961 1 366 666 
                         </Typography>
                         <Typography variant='body1' sx={{ color: '#121629', fontSize: 15 }}>
-                            Mobile: +961 78 965285 
+                            Mobile: +961 76 767676 
                         </Typography>
                         <Typography variant='body1' sx={{ color: '#121629', fontSize: 15 }}>
                             Address: Clemenceau, Beirut - Lebanon
                         </Typography>
                         <Typography variant='body1' sx={{ color: '#121629', fontSize: 15 }}>
-                            Email: contact@better-from-scratch.com
+                            Email: contact@sweet-treats.com
                         </Typography>
                     </Box>
                 </div>

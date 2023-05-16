@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/sidebar.css";
-import logo from "../../img/logo-removebg-preview.png";
+import logo from "../../img/logo.jpg";
 import { FaUser, FaSignOutAlt, FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { IoRestaurant } from "react-icons/io5";
@@ -16,7 +16,7 @@ const Icon = ({ icon }) => (
 function SideBar() {
   return (
     <header>
-      <img src={logo} alt="logo" width="70px" height="100px" />
+      <img src={logo} alt="logo" width="80px" height="75px" />
       
       <ul className="top-menu">
         <Link to="/menu"><Icon icon={<MdDashboard title="Menu"/>} /></Link>

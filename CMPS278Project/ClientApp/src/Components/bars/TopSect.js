@@ -9,7 +9,7 @@ function TopSect() {
     <div className="top-section">
       <div>
         <div style={{ display: 'flex' }}>
-          <Typography variant="h5" sx={{ color: '#eebbc3', mx:1 }}>Better from Scratch</Typography>
+          <Typography variant="h5" sx={{ color: '#eebbc3', mx:1 }}>Sweet Treats</Typography>
           <CookieIcon sx={{ color: '#eebbc3', mt:0.5 }} />
         </div>
         <div>
