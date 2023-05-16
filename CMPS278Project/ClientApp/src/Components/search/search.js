@@ -103,8 +103,8 @@ function Search() {
         // }
 
     return(
-        <><SideBar />
-        
+        <>
+        <SideBar />
         <div className="top-section">
             <div className="search-box">
                 <input type="text" placeholder="Search food..." value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
@@ -113,102 +113,100 @@ function Search() {
                 </i>
             </div>
         </div>
-      <div className="foodcontainer">
-        <Box className="left-side">
-      <div className="w-full mx-auto align">
-                {items && (
-                    <>
-                        <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
-                            {items.map((item) => {
-                                return(
-                                    <>
-                                        <Grid item>
-                                            <Card sx={{ width: 200, height: 270, m: 1, backgroundColor: "#fffffe" }}>
-                                                <CardActionArea component={Button} sx={{ textTransform: 'capitalize', height: 'fitContent' }} button-key={item.id} onClick={(e) => handleClickOpen(e)}>
-                                                    <CardMedia
-                                                        component="img"
-                                                        height="130"
-                                                        image={require("../../img/allMenuItems/" + item.id + ".jpg")}
-                                                        alt="food" />
-                                                    <CardContent sx={{ pb:0, height: 92 }}>
-                                                        <Typography gutterBottom variant="h6" sx={{ fontSize: 17, height: 50, overflow: 'hidden' }}>
-                                                            {item.name}
-                                                        </Typography>
-                                                        <Typography variant="body1" sx={{ fontSize: 14, color: '#b8c1ec' }}>
-                                                            LBP {item.price} <span style={{ color: '#9e9e9e' }}>/ piece</span>
-                                                        </Typography>
-                                                        {/* show availability */}
-                                                    </CardContent>
-                                                    <CardActions sx={{ display: 'flex', justifyContent: 'flex-end', p:1 }}>
-                                                        <IconButton button-key={item.id} onClick={(e) => handleClickOpen(e)} size="small" aria-label="arrow" style={{ color: '#EF9DAA' }}>
-                                                            <ChevronRightIcon />
-                                                        </IconButton>
-                                                    </CardActions>
-                                                </CardActionArea>
-                                            </Card>
-                                        </Grid> 
-                                    </>
-                                );
-                            })}
-                            {items.filter((Data) => Data.id == id)
-                                  .map((filteredItem) => (
-                                    <ItemDialog
-                                        open={open}
-                                        onClose={handleClose}
-                                    >
-                                        <DialogContent dividers={true}>
-                                            <div>
-                                                <img src={require("../../img/allMenuItems/" + filteredItem.id + ".jpg")} alt="food" height="350" width="100%" style={{ borderRadius: '5px' }} />
-                                            </div>
-                                            <DialogContentText>
-                                                 <Typography variant="h5">
-                                                    {filteredItem.name}
-                                                </Typography>
-                                                <Typography variant="body1" sx={{ my: 1 }}>
-                                                    {filteredItem.description}
-                                                </Typography>
-                                                <Typography sx={{ fontSize: 14, color: '#b8c1ec', mb: 1 }}>
-                                                    LBP {filteredItem.price} <span style={{ color: '#9e9e9e' }}>/ piece</span>
-                                                </Typography>
-                                            </DialogContentText>
-                                            <Divider light />
-                                            <TextField
-                                                margin="dense"
-                                                id="instructions"
-                                                label="Any special instructions?"
-                                                type="text"
-                                                fullWidth
-                                                variant="outlined"
-                                                sx={{ my: 2 }} />
-                                            <Divider light />
-                                            <div className="quantity-div">
-                                                <div className="quantity-input">
-                                                    <button className="quantity-input-left" onClick={DecreaseQuantity}>
-                                                        &ndash;
-                                                    </button>
-                                                    <input className="quantity-input-screen" type="text" value={quantity} readonly />
-                                                    <button className="quantity-input-right" onClick={AddQuantity}>
-                                                        &#xff0b;
-                                                    </button>  
+        <div className="foodcontainer">
+            <Box className="left-side">
+                <div className=" mx-auto align">
+                    {items && (
+                        <>
+                            <Grid container spacing={1} alignItems="center" justifyContent="center" sx={{ px: 2, py: 1 }}>
+                                {items.map((item) => {
+                                    return(
+                                        <>
+                                            <Grid item>
+                                                <Card sx={{ width: 200, height: 270, m: 1, backgroundColor: "#fffffe" }}>
+                                                    <CardActionArea component={Button} sx={{ textTransform: 'capitalize', height: 'fitContent' }} button-key={item.id} onClick={(e) => handleClickOpen(e)}>
+                                                        <CardMedia
+                                                            component="img"
+                                                            height="130"
+                                                            image={require("../../img/allMenuItems/" + item.id + ".jpg")}
+                                                            alt="food" />
+                                                        <CardContent sx={{ pb:0, height: 92 }}>
+                                                            <Typography gutterBottom variant="h6" sx={{ fontSize: 17, height: 50, overflow: 'hidden' }}>
+                                                                {item.name}
+                                                            </Typography>
+                                                            <Typography variant="body1" sx={{ fontSize: 14, color: '#b8c1ec' }}>
+                                                                LBP {item.price} <span style={{ color: '#9e9e9e' }}>/ piece</span>
+                                                            </Typography>
+                                                            {/* show availability */}
+                                                        </CardContent>
+                                                        <CardActions sx={{ display: 'flex', justifyContent: 'flex-end', p:1 }}>
+                                                            <IconButton button-key={item.id} onClick={(e) => handleClickOpen(e)} size="small" aria-label="arrow" style={{ color: '#EF9DAA' }}>
+                                                                <ChevronRightIcon />
+                                                            </IconButton>
+                                                        </CardActions>
+                                                    </CardActionArea>
+                                                </Card>
+                                            </Grid> 
+                                        </>
+                                    );
+                                })}
+                                {items.filter((Data) => Data.id == id)
+                                    .map((filteredItem) => (
+                                        <ItemDialog
+                                            open={open}
+                                            onClose={handleClose}
+                                        >
+                                            <DialogContent dividers={true}>
+                                                <div>
+                                                    <img src={require("../../img/allMenuItems/" + filteredItem.id + ".jpg")} alt="food" height="350" width="100%" style={{ borderRadius: '5px' }} />
+                                                </div>
+                                                <DialogContentText>
+                                                    <Typography variant="h5">
+                                                        {filteredItem.name}
+                                                    </Typography>
+                                                    <Typography variant="body1" sx={{ my: 1 }}>
+                                                        {filteredItem.description}
+                                                    </Typography>
+                                                    <Typography sx={{ fontSize: 14, color: '#b8c1ec', mb: 1 }}>
+                                                        LBP {filteredItem.price} <span style={{ color: '#9e9e9e' }}>/ piece</span>
+                                                    </Typography>
+                                                </DialogContentText>
+                                                <Divider light />
+                                                <TextField
+                                                    margin="dense"
+                                                    id="instructions"
+                                                    label="Any special instructions?"
+                                                    type="text"
+                                                    fullWidth
+                                                    variant="outlined"
+                                                    sx={{ my: 2 }} />
+                                                <Divider light />
+                                                <div className="quantity-div">
+                                                    <div className="quantity-input">
+                                                        <button className="quantity-input-left" onClick={DecreaseQuantity}>
+                                                            &ndash;
+                                                        </button>
+                                                        <input className="quantity-input-screen" type="text" value={quantity} readonly />
+                                                        <button className="quantity-input-right" onClick={AddQuantity}>
+                                                            &#xff0b;
+                                                        </button>  
+                                                    </div> 
                                                 </div> 
-                                            </div> 
-                                            <Divider light />
-                                        </DialogContent>
-                                        <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                            <TextButton onClick={handleClose}>Cancel</TextButton>
-                                            <TextButton onClick={handleAddCartitem}>Add to Cart</TextButton>
-                                        </DialogActions>
-                                    </ItemDialog>
-                                  ))
-                            }
-                        </Grid> 
-                    </>
-                )}
-
-                
-            </div>
+                                                <Divider light />
+                                            </DialogContent>
+                                            <DialogActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                <TextButton onClick={handleClose}>Cancel</TextButton>
+                                                <TextButton onClick={handleAddCartitem}>Add to Cart</TextButton>
+                                            </DialogActions>
+                                        </ItemDialog>
+                                    ))
+                                }
+                            </Grid> 
+                        </>
+                    )} 
+                </div>
             </Box>
-            </div>
+        </div>
         </>
     )
 }
