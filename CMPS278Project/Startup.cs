@@ -33,15 +33,22 @@ public class Startup {
         services.AddRazorPages();
         services.AddCors(options =>
             {
-                options.AddDefaultPolicy(
-                                builder  =>
-                                {
-                                    builder.WithOrigins("https://localhost:5001",
-                                                        "http://localhost:5000")
-                                                            .AllowAnyHeader()
-                                                            .AllowAnyMethod()
-                                                            .AllowCredentials();
-                                });
+                // options.AddDefaultPolicy(
+                //     builder  =>
+                //     {
+                //         builder.WithOrigins("https://localhost:5001",
+                //                             "http://localhost:5000")
+                //                                 .AllowAnyHeader()
+                //                                 .AllowAnyMethod()
+                //                                 .AllowCredentials();
+                //     }
+                // );
+                options.AddPolicy("CorsPolicy", builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
             });
 
         services.AddControllersWithViews();
@@ -102,7 +109,7 @@ public class Startup {
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
-        app.UseCors();
+        app.UseCors("CorsPolicy");
         app.UseAuthentication();
         app.UseAuthorization();
 

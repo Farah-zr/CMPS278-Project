@@ -1,35 +1,65 @@
 import React from "react";
-import "../styles/sidebar.css";
-import logo from "../../img/logo.jpg";
-import { FaUser, FaSignOutAlt, FaShoppingCart } from "react-icons/fa";
+import { FaSignOutAlt, FaShoppingCart, FaCookieBite } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-import { IoRestaurant } from "react-icons/io5";
-import { MdDashboard } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import { IoRestaurant, IoStorefront } from "react-icons/io5";
+import { Link, useLocation } from "react-router-dom";
 
-const Icon = ({ icon }) => (
-  <li>
-    <p href="">{icon}</p>
-  </li>
+const Icon = ({ icon, styles, isActive }) => (
+  <p
+    className={
+      isActive
+        ? "text-[25px] text-center text-peach"
+        : "text-[20px] text-center hover:text-[25px]"
+    }
+  >
+    {icon}
+  </p>
 );
 
 function SideBar() {
-  return (
-    <header>
-      <img src={logo} alt="logo" width="80px" height="75px" />
-      
-      <ul className="top-menu">
-        <Link to="/menu"><Icon icon={<MdDashboard title="Menu"/>} /></Link>
-        <Link to="/cart"><Icon icon={<FaShoppingCart title="Cart"/>} /></Link>
-        <Link to="/search"><Icon icon={<FaSearch  title="Search"/>} /></Link>
-        <Link to="/aboutus"><Icon icon={<IoRestaurant title="About us"/>} /></Link>
-      </ul>
+  const location = useLocation();
 
-      <ul className="bottom-menu">
-      <Link to="/"><Icon icon={<FaSignOutAlt />} /></Link>
-      </ul>
-      
-    </header>
+  return (
+    <div className="w-[60px] h-full flex flex-col bg-background items-center py-4 gap-4 justify-between shadow-[0_0_7px_rgba(0,0,0,0.3)]">
+      <div className="flex flex-col gap-6 items-center text-white">
+        <div className="font-bold-italic flex text-primary h-[50px]">
+          <Link to="/" className="text-[28px] text-center">
+            <FaCookieBite />
+          </Link>
+        </div>
+
+        <Link to="/">
+          <Icon
+            icon={<IoRestaurant title="Menu" />}
+            isActive={location.pathname === "/"}
+          />
+        </Link>
+        <Link to="/cart">
+          <Icon
+            icon={<FaShoppingCart title="Cart" />}
+            isActive={location.pathname === "/cart"}
+          />
+        </Link>
+        <Link to="/search">
+          <Icon
+            icon={<FaSearch title="Search" />}
+            isActive={location.pathname === "/search"}
+          />
+        </Link>
+        <Link to="/aboutus">
+          <Icon
+            icon={<IoStorefront title="About us" />}
+            isActive={location.pathname === "/aboutus"}
+          />
+        </Link>
+      </div>
+
+      <div>
+        <Link to="/login" className="text-white">
+          <Icon icon={<FaSignOutAlt />} />
+        </Link>
+      </div>
+    </div>
   );
 }
 

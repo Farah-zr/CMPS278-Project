@@ -1,17 +1,22 @@
 import React from "react";
 import "./styles/container.css";
-import TopSect from "./bars/TopSect";
+import Header from "./bars/Header";
 import FoodContainer from "./menu/FoodContainer";
 import SideBar from "./bars/SideBar";
 
-
 function Container() {
   return (
-    
-    <><SideBar /><div className="container">
-      <TopSect />
-      <FoodContainer />
-    </div></>
+    <>
+      <div className="flex">
+        <SideBar />
+        <div className="w-full px-7 py-5">
+          <div className="max-w-[1200px] my-0 mx-auto">
+            <Header />
+            <FoodContainer />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

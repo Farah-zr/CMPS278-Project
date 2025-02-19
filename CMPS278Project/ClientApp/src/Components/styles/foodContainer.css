@@ -9,7 +9,9 @@
 
 .foodcontainer .left-side {
   width: 100%;
-  background: #d4d8f0;
+  /* background: #c1ada3; */
+  background: #fffffe;
+
   height: 93%;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
   margin-top: 20px;
@@ -120,8 +122,8 @@
 }
 
 .item .item-details .trash-box:hover {
-  color: #EF9DAA;
-  border: 1px solid #EF9DAA;
+  color: #ef9daa;
+  border: 1px solid #ef9daa;
 }
 
 .total {
@@ -157,10 +159,11 @@
   align-items: center;
 }
 
-.quantity-input-left, .quantity-input-right {
+.quantity-input-left,
+.quantity-input-right {
   user-select: none;
   outline: none;
-  padding: .7rem;
+  padding: 0.7rem;
   width: 3rem;
   height: 44px;
   font-size: 1.1rem;
@@ -170,14 +173,15 @@
   text-align: center;
   cursor: pointer;
 }
-.quantity-input-left:hover, .quantity-input-right:hover {
+.quantity-input-left:hover,
+.quantity-input-right:hover {
   /* background: #EF9DAA; */
-  color: #EF9DAA;
+  color: #ef9daa;
 }
 
 .quantity-input-screen {
   width: 4rem;
-  padding: .7rem;
+  padding: 0.7rem;
   font-size: 1rem;
   border: 0;
   border-top: 0 solid #dbdbdb;
@@ -194,7 +198,7 @@
 
 .foodcontainer .thank-u-block {
   margin: auto auto;
-  color: #EF9DAA;
+  color: #ef9daa;
   align-items: center;
   text-align: center;
 }
