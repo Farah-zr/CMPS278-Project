@@ -1,16 +1,5 @@
 using Menu.Data;
 using MenuItemsRepo.Interfaces;
-using MenuItems.Repos;
-using CakePopsRepo.Interfaces;
-using CakePops.Repos;
-using BrowniesRepo.Interfaces;
-using Brownies.Repos;
-using CinnamonRollsRepo.Interfaces;
-using CinnamonRolls.Repos;
-using CookiesRepo.Interfaces;
-using Cookies.Repos;
-using CupcakesRepo.Interfaces;
-using Cupcakes.Repos;
 using CartItemsRepo.Interfaces;
 using CartItems.Repos;
 using Users.Models;
@@ -21,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using MenuItems.Repos;
 
 public class Startup {
     public IConfiguration configRoot {
@@ -91,12 +81,7 @@ public class Startup {
                 };
             });
 
-        services.AddScoped<IMenuItemRepo, MenuItemRepo>();
-        services.AddScoped<ICakePopRepo, CakePopRepo>();
-        services.AddScoped<IBrownieRepo, BrownieRepo>();
-        services.AddScoped<ICinnamonRollRepo, CinnamonRollRepo>();
-        services.AddScoped<ICookieRepo, CookieRepo>();
-        services.AddScoped<ICupcakeRepo, CupcakeRepo>();
+        services.AddScoped(typeof(IMenuItemRepo<>), typeof(MenuItemRepo<>));
         services.AddScoped<ICartItemRepo, CartItemRepo>();
         services.AddScoped<JwtService>();
     }

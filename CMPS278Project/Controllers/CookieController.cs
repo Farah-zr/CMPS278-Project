@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using Cookies.Models;
-using CookiesRepo.Interfaces;
+using MenuItemsRepo.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cookies.Controllers;
 
@@ -8,9 +8,9 @@ namespace Cookies.Controllers;
 [Route("/api/[controller]")]
 public class CookiesController : ControllerBase
 {
-    private readonly ICookieRepo _repo;
+    private readonly IMenuItemRepo<Cookie> _repo;
 
-    public CookiesController(ICookieRepo repo)
+    public CookiesController(IMenuItemRepo<Cookie> repo)
     {
         this._repo = repo;
     }
@@ -18,7 +18,7 @@ public class CookiesController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Cookie>>> GetAllCookies()
     {
-        return Ok(await _repo.GetCookiesAsync());
+        return Ok(await _repo.GetItemsAsync());
     }
 
     [HttpGet("{id:int}")]
@@ -33,7 +33,7 @@ public class CookiesController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Cookie>> AddCookie(Cookie Cookie)
     {
-        var addedCookie = await _repo.AddCookieAsync(Cookie);
+        var addedCookie = await _repo.AddItemAsync(Cookie);
         if (addedCookie != null) return
             Created($"api/Cookies/{addedCookie.Id}", addedCookie);
         return BadRequest();
@@ -42,7 +42,7 @@ public class CookiesController : ControllerBase
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteCookie(int id)
     {
-        var success = await _repo.DeleteCookieAsync(id);
+        var success = await _repo.DeleteItemAsync(id);
         if (success)
             return NoContent();
         return BadRequest();

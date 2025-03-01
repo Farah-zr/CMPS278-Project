@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/container.css";
 import Header from "./bars/Header";
 import FoodContainer from "./menu/FoodContainer";
-import SideBar from "./bars/SideBar";
+import SideBar from "./SideBar";
 
 function Container() {
   return (

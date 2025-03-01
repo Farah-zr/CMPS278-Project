@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using Brownies.Models;
-using BrowniesRepo.Interfaces;
+using MenuItemsRepo.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Brownies.Controllers;
 
@@ -8,9 +8,9 @@ namespace Brownies.Controllers;
 [Route("/api/[controller]")]
 public class BrowniesController : ControllerBase
 {
-    private readonly IBrownieRepo _repo;
+    private readonly IMenuItemRepo<Brownie> _repo;
 
-    public BrowniesController(IBrownieRepo repo)
+    public BrowniesController(IMenuItemRepo<Brownie> repo)
     {
         this._repo = repo;
     }
@@ -18,7 +18,7 @@ public class BrowniesController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Brownie>>> GetAllBrownies()
     {
-        return Ok(await _repo.GetBrowniesAsync());
+        return Ok(await _repo.GetItemsAsync());
     }
 
     [HttpGet("{id:int}")]
@@ -33,7 +33,7 @@ public class BrowniesController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Brownie>> AddBrownie(Brownie Brownie)
     {
-        var addedBrownie = await _repo.AddBrownieAsync(Brownie);
+        var addedBrownie = await _repo.AddItemAsync(Brownie);
         if (addedBrownie != null) return
             Created($"api/Brownies/{addedBrownie.Id}", addedBrownie);
         return BadRequest();
@@ -42,7 +42,7 @@ public class BrowniesController : ControllerBase
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteBrownie(int id)
     {
-        var success = await _repo.DeleteBrownieAsync(id);
+        var success = await _repo.DeleteItemAsync(id);
         if (success)
             return NoContent();
         return BadRequest();

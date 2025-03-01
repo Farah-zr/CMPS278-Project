@@ -1,6 +1,8 @@
+using MenuItem.Interfaces;
+
 namespace Cookies.Models;
 
-public class Cookie {
+public class Cookie : IMenuItem{
 
     public int Id { get; set; }
 
@@ -8,5 +10,5 @@ public class Cookie {
 
     public string Description { get; set; } = null!;
 
-    public int Price { get; set; }
+    public double Price { get; set; }
 }

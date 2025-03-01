@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using Cupcakes.Models;
-using CupcakesRepo.Interfaces;
+using MenuItemsRepo.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Cupcakes.Controllers;
 
@@ -8,9 +8,9 @@ namespace Cupcakes.Controllers;
 [Route("/api/[controller]")]
 public class CupcakesController : ControllerBase
 {
-    private readonly ICupcakeRepo _repo;
+    private readonly IMenuItemRepo<Cupcake> _repo;
 
-    public CupcakesController(ICupcakeRepo repo)
+    public CupcakesController(IMenuItemRepo<Cupcake> repo)
     {
         this._repo = repo;
     }
@@ -18,7 +18,7 @@ public class CupcakesController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<Cupcake>>> GetAllCupcakes()
     {
-        return Ok(await _repo.GetCupcakesAsync());
+        return Ok(await _repo.GetItemsAsync());
     }
 
     [HttpGet("{id:int}")]
@@ -33,7 +33,7 @@ public class CupcakesController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Cupcake>> AddCupcake(Cupcake Cupcake)
     {
-        var addedCupcake = await _repo.AddCupcakeAsync(Cupcake);
+        var addedCupcake = await _repo.AddItemAsync(Cupcake);
         if (addedCupcake != null) return
             Created($"api/Cupcakes/{addedCupcake.Id}", addedCupcake);
         return BadRequest();
@@ -42,7 +42,7 @@ public class CupcakesController : ControllerBase
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteCupcake(int id)
     {
-        var success = await _repo.DeleteCupcakeAsync(id);
+        var success = await _repo.DeleteItemAsync(id);
         if (success)
             return NoContent();
         return BadRequest();

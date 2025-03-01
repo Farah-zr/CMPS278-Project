@@ -1,6 +1,8 @@
+using MenuItem.Interfaces;
+
 namespace Cupcakes.Models;
 
-public class Cupcake {
+public class Cupcake : IMenuItem {
 
     public int Id { get; set; }
 
@@ -8,5 +10,5 @@ public class Cupcake {
 
     public string Description { get; set; } = null!;
 
-    public int Price { get; set; }
+    public double Price { get; set; }
 }

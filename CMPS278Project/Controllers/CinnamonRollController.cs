@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using CinnamonRolls.Models;
-using CinnamonRollsRepo.Interfaces;
+using MenuItemsRepo.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CinnamonRolls.Controllers;
 
@@ -8,9 +8,9 @@ namespace CinnamonRolls.Controllers;
 [Route("/api/[controller]")]
 public class CinnamonRollsController : ControllerBase
 {
-    private readonly ICinnamonRollRepo _repo;
+    private readonly IMenuItemRepo<CinnamonRoll> _repo;
 
-    public CinnamonRollsController(ICinnamonRollRepo repo)
+    public CinnamonRollsController(IMenuItemRepo<CinnamonRoll> repo)
     {
         this._repo = repo;
     }
@@ -18,7 +18,7 @@ public class CinnamonRollsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<CinnamonRoll>>> GetAllCinnamonRolls()
     {
-        return Ok(await _repo.GetCinnamonRollsAsync());
+        return Ok(await _repo.GetItemsAsync());
     }
 
     [HttpGet("{id:int}")]
@@ -33,7 +33,7 @@ public class CinnamonRollsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<CinnamonRoll>> AddCinnamonRoll(CinnamonRoll CinnamonRoll)
     {
-        var addedCinnamonRoll = await _repo.AddCinnamonRollAsync(CinnamonRoll);
+        var addedCinnamonRoll = await _repo.AddItemAsync(CinnamonRoll);
         if (addedCinnamonRoll != null) return
             Created($"api/CinnamonRolls/{addedCinnamonRoll.Id}", addedCinnamonRoll);
         return BadRequest();
@@ -42,7 +42,7 @@ public class CinnamonRollsController : ControllerBase
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteCinnamonRoll(int id)
     {
-        var success = await _repo.DeleteCinnamonRollAsync(id);
+        var success = await _repo.DeleteItemAsync(id);
         if (success)
             return NoContent();
         return BadRequest();

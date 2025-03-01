@@ -1,6 +1,8 @@
+using MenuItem.Interfaces;
+
 namespace Brownies.Models;
 
-public class Brownie {
+public class Brownie : IMenuItem {
 
     public int Id { get; set; }
 
@@ -8,5 +10,5 @@ public class Brownie {
 
     public string Description { get; set; } = null!;
 
-    public int Price { get; set; }
+    public double Price { get; set; }
 }

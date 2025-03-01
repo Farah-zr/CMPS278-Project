@@ -19,6 +19,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import ItemCard from "../ItemCard";
 
 function AllMenuItems() {
   const TextButton = styled(Button)(({ theme }) => ({
@@ -40,20 +41,20 @@ function AllMenuItems() {
   const [quantity, setQuantity] = React.useState(1);
   const [id, setId] = React.useState(0);
 
-  useEffect(() => {
-    axios
-      .get(`https://localhost:5001/api/MenuItems`, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
-      .then((res) => {
-        setItems(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://localhost:5001/api/MenuItems`, {
+  //       headers: {
+  //         "Access-Control-Allow-Origin": "*",
+  //       },
+  //     })
+  //     .then((res) => {
+  //       setItems(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   const handleClickOpen = (e) => {
     setId(e.currentTarget.getAttribute("button-key"));
@@ -109,17 +110,14 @@ function AllMenuItems() {
         {items && (
           <>
             <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
-              {items.map((item) => {
+              {items.map((item, index) => {
                 return (
                   <>
-                    <Grid item>
-                      <Card
-                        sx={{
-                          width: 200,
-                          height: 270,
-                          m: 1,
-                          backgroundColor: "#f8edeb",
-                        }}
+                    <Grid item key={index}>
+                      <ItemCard item={item} handleClickOpen={handleClickOpen} />
+                      {/* <Card
+                        key={index}
+                        className="w-[200px] h-[270px] m-1 bg-misty-rose"
                       >
                         <CardActionArea
                           component={Button}
@@ -157,7 +155,6 @@ function AllMenuItems() {
                               LBP {item.price}{" "}
                               <span style={{ color: "#9e9e9e" }}>/ piece</span>
                             </Typography>
-                            {/* show availability */}
                           </CardContent>
                           <CardActions
                             sx={{
@@ -177,7 +174,7 @@ function AllMenuItems() {
                             </IconButton>
                           </CardActions>
                         </CardActionArea>
-                      </Card>
+                      </Card> */}
                     </Grid>
                   </>
                 );

@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using CakePops.Models;
-using CakePopsRepo.Interfaces;
+using MenuItemsRepo.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CakePops.Controllers;
 
@@ -8,9 +8,9 @@ namespace CakePops.Controllers;
 [Route("/api/[controller]")]
 public class CakePopsController : ControllerBase
 {
-    private readonly ICakePopRepo _repo;
+    private readonly IMenuItemRepo<CakePop> _repo;
 
-    public CakePopsController(ICakePopRepo repo)
+    public CakePopsController(IMenuItemRepo<CakePop> repo)
     {
         this._repo = repo;
     }
@@ -18,7 +18,7 @@ public class CakePopsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<CakePop>>> GetAllCakePops()
     {
-        return Ok(await _repo.GetCakePopsAsync());
+        return Ok(await _repo.GetItemsAsync());
     }
 
     [HttpGet("{id:int}")]
@@ -33,7 +33,7 @@ public class CakePopsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<CakePop>> AddCakePop(CakePop cakePop)
     {
-        var addedCakePop = await _repo.AddCakePopAsync(cakePop);
+        var addedCakePop = await _repo.AddItemAsync(cakePop);
         if (addedCakePop != null) return
             Created($"api/CakePops/{addedCakePop.Id}", addedCakePop);
         return BadRequest();
@@ -42,7 +42,7 @@ public class CakePopsController : ControllerBase
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteCakePop(int id)
     {
-        var success = await _repo.DeleteCakePopAsync(id);
+        var success = await _repo.DeleteItemAsync(id);
         if (success)
             return NoContent();
         return BadRequest();

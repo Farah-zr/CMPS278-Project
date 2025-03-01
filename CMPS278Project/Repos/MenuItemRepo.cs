@@ -1,66 +1,54 @@
 using Menu.Data;
-using MenuItemsRepo.Interfaces;
-using MenuItems.Models;
 using Microsoft.EntityFrameworkCore;
+using MenuItemsRepo.Interfaces;
+using MenuItem.Interfaces;
 
 namespace MenuItems.Repos;
 
-public class MenuItemRepo : IMenuItemRepo
+public class MenuItemRepo<T> : IMenuItemRepo<T> where T : class
 {
     private readonly AppDbContext _db;
+    private readonly DbSet<T> _dbSet;
 
     public MenuItemRepo(AppDbContext db)
     {
-        this._db = db;
-    }
-    public async Task<MenuItem?> AddMenuItemAsync(MenuItem menuItem)
-    {
-       _db.MenuItems.Add(menuItem); 
-        var success = await _db.SaveChangesAsync() > 0; 
-        if (!success)
-            return null;
-        return menuItem;
+        _db = db;
+        _dbSet = db.Set<T>();
     }
 
-    public async Task<bool> DeleteMenuItemAsync(int id)
+    public async Task<T?> AddItemAsync(T menuItem)
     {
-        var menuItem = await _db.MenuItems.FirstOrDefaultAsync(x => x.Id == id);
-        
-        if (menuItem == null)
-            return false;
-        
-        _db.MenuItems.Remove(menuItem);
-        
+        _dbSet.Add(menuItem);
         var success = await _db.SaveChangesAsync() > 0;
-        if (!success)
-            return false;
-        return true;
+        return success ? menuItem : null;
     }
 
-    public async Task<MenuItem?> GetByIdAsync(int id)
+    public async Task<bool> DeleteItemAsync(int id)
     {
-        var menuItem = await _db.MenuItems.FirstOrDefaultAsync(x => x.Id == id);
-        if (menuItem != null)
-            return menuItem;
-        return null;
+        var item = await _dbSet.FindAsync(id);
+        if (item == null) return false;
+
+        _dbSet.Remove(item);
+        return await _db.SaveChangesAsync() > 0;
     }
 
-    public async Task<List<MenuItem>> GetMenuItemsAsync()
+    public async Task<T?> GetByIdAsync(int id)
     {
-        return await _db.MenuItems.ToListAsync();
+        return await _dbSet.FindAsync(id);
     }
 
-    public async Task<MenuItem?> UpdateMenuItemAsync(MenuItem menuItem, int id)
+    public async Task<List<T>> GetItemsAsync()
     {
-        var menuItemToBeUpdated = await GetByIdAsync(id);
-        
-        if (menuItemToBeUpdated == null) return null;
+        return await _dbSet.ToListAsync();
+    }
 
-        menuItemToBeUpdated.Category = menuItem.Category;
-        menuItemToBeUpdated.Description = menuItem.Description;
-        menuItemToBeUpdated.Name = menuItem.Name;
-        menuItemToBeUpdated.Price = menuItem.Price;
+    public async Task<T?> UpdateItemAsync(T menuItem, int id)
+    {
+        var existingItem = await _dbSet.FindAsync(id);
+        if (existingItem == null) return null;
 
-        return menuItemToBeUpdated;
+        _db.Entry(existingItem).CurrentValues.SetValues(menuItem);
+        await _db.SaveChangesAsync();
+        return existingItem;
     }
 }

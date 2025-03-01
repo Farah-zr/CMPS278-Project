@@ -1,12 +1,12 @@
-using MenuItems.Models;
+using MenuItem.Interfaces;
 
 namespace MenuItemsRepo.Interfaces;
 
-public interface IMenuItemRepo
+public interface IMenuItemRepo<T> where T : class
 {
-    Task<List<MenuItem>> GetMenuItemsAsync();
-    Task<MenuItem?> GetByIdAsync(int id); 
-    Task<MenuItem?> AddMenuItemAsync(MenuItem menuItem);
-    Task<bool> DeleteMenuItemAsync(int id);
-    Task<MenuItem?> UpdateMenuItemAsync(MenuItem menuItem, int id);
+    Task<List<T>> GetItemsAsync();
+    Task<T?> GetByIdAsync(int id);
+    Task<T> AddItemAsync(T menuItem);
+    Task<bool> DeleteItemAsync(int id);
+    Task<T?> UpdateItemAsync(T menuItem, int id);
 }

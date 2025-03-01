@@ -1,6 +1,8 @@
+using MenuItem.Interfaces;
+
 namespace CakePops.Models;
 
-public class CakePop {
+public class CakePop : IMenuItem {
 
     public int Id { get; set; }
 
@@ -8,5 +10,5 @@ public class CakePop {
 
     public string Description { get; set; } = null!;
 
-    public int Price { get; set; }
+    public double Price { get; set; }
 }

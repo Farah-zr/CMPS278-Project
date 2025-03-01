@@ -1,6 +1,8 @@
+using MenuItem.Interfaces;
+
 namespace CinnamonRolls.Models;
 
-public class CinnamonRoll {
+public class CinnamonRoll : IMenuItem {
 
     public int Id { get; set; }
 
@@ -8,5 +10,5 @@ public class CinnamonRoll {
 
     public string Description { get; set; } = null!;
 
-    public int Price { get; set; }
+    public double Price { get; set; }
 }
