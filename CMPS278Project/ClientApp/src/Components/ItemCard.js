@@ -19,7 +19,7 @@ function ItemCard(props) {
         <CardMedia
           component="img"
           height="150"
-          image={require(`../img/${props.category}/${props.item.id}.jpg`)}
+          image={require(`../assets/images/${props.category}/${props.item.id}.jpg`)}
           alt="food"
         />
         <CardContent className="p-2 flex flex-col gap-2">

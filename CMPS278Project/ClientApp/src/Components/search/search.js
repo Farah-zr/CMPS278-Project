@@ -171,9 +171,6 @@ function Search() {
                               <CardMedia
                                 component="img"
                                 height="130"
-                                image={require("../../img/allMenuItems/" +
-                                  item.id +
-                                  ".jpg")}
                                 alt="food"
                               />
                               <CardContent sx={{ pb: 0, height: 92 }}>
@@ -228,15 +225,15 @@ function Search() {
                       <ItemDialog open={open} onClose={handleClose}>
                         <DialogContent dividers={true}>
                           <div>
-                            <img
-                              src={require("../../img/allMenuItems/" +
+                            {/* <img
+                              src={require("../../assets/imgages/allMenuItems/" +
                                 filteredItem.id +
                                 ".jpg")}
                               alt="food"
                               height="350"
                               width="100%"
                               style={{ borderRadius: "5px" }}
-                            />
+                            /> */}
                           </div>
                           <DialogContentText>
                             <Typography variant="h5">

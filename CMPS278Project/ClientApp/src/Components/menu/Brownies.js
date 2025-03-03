@@ -14,7 +14,6 @@ import {
 } from "@mui/material";
 import ItemCard from "../ItemCard";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchBrowniesThunk } from "../../Store/BrowniesSlice";
 
 function Brownies() {
   const TextButton = styled(Button)(({ theme }) => ({
@@ -32,22 +31,22 @@ function Brownies() {
   }));
 
   const [open, setOpen] = React.useState(false);
-  // const [items, setItems] = React.useState([]);
+  const [items, setItems] = React.useState([]);
   const [quantity, setQuantity] = React.useState(1);
   const [id, setId] = React.useState(0);
 
-  const dispatch = useDispatch();
-  const { brownies, status, error } = useSelector((state) => state.brownies);
+  // const dispatch = useDispatch();
+  // const { brownies, status, error } = useSelector((state) => state.brownies);
 
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchBrowniesThunk());
-    }
-  }, [status, dispatch]);
+  // useEffect(() => {
+  //   if (status === "idle") {
+  //     dispatch(fetchBrowniesThunk());
+  //   }
+  // }, [status, dispatch]);
 
-  if (status === "loading") console.log("Loading...");
-  if (status === "failed") console.log(error);
-  else if (status === "succeeded") console.log(brownies);
+  // if (status === "loading") console.log("Loading...");
+  // if (status === "failed") console.log(error);
+  // else if (status === "succeeded") console.log(brownies);
 
   const handleClickOpen = (e) => {
     setOpen(true);
@@ -97,10 +96,10 @@ function Brownies() {
   return (
     <>
       <div className="w-full mx-auto align">
-        {brownies && (
+        {items && (
           <>
             <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
-              {brownies.map((item) => {
+              {items.map((item) => {
                 return (
                   <>
                     <Grid item>
@@ -113,7 +112,7 @@ function Brownies() {
                   </>
                 );
               })}
-              {brownies
+              {items
                 .filter((Data) => Data.id == id)
                 .map((filteredItem) => (
                   <ItemDialog open={open} onClose={handleClose}>
