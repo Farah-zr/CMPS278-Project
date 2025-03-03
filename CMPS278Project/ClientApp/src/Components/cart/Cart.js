@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/foodContainer.css";
+import "../../assets/styles/foodContainer.css";
 import {
   Box,
   Button,
@@ -52,18 +52,18 @@ function Cart() {
     setState((n) => n + 1);
   };
 
-  useEffect(() => {
-    axios
-      .get(`https://localhost:5001/api/MenuItems`)
-      .then((res) => {
-        setItems(res.data);
-        console.log(res.data);
-        console.log(items);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://localhost:5001/api/MenuItems`)
+  //     .then((res) => {
+  //       setItems(res.data);
+  //       console.log(res.data);
+  //       console.log(items);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   // getting list of cart items from menu items db
   var listOfCartItems = [];

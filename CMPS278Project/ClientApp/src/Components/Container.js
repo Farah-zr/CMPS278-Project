@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/container.css";
+import "../assets/styles/container.css";
 import Header from "./bars/Header";
 import FoodContainer from "./menu/FoodContainer";
 import SideBar from "./SideBar";

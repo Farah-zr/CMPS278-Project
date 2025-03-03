@@ -10,6 +10,8 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import axios from "axios";
+import { Provider } from "react-redux";
+import store from "./Store/store";
 
 // const theme = createTheme({
 //   palette: {
@@ -78,7 +80,9 @@ const theme = createTheme({
 root.render(
   <StyledEngineProvider injectFirst>
     <ThemeProvider theme={theme}>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </ThemeProvider>
   </StyledEngineProvider>
 );

@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import SideBar from "./SideBar";
-import "./styles/aboutus.css";
+import "../assets/styles/aboutus.css";
 
 const AboutUs = () => {
   return (

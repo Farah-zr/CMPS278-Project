@@ -2,22 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #f49595;
+@layer base {
+  :root {
+    --primary: #f49595;
 
-  --secondary: #f8edeb;
+    --secondary: #f8edeb;
 
-  --misty-rose: #fae1dd;
-  --pale-dogwood: #fcd5ce;
+    --misty-rose: #fae1dd;
+    --pale-dogwood: #fcd5ce;
 
-  --melon: #f8b5b2;
+    --melon: #f8b5b2;
 
-  --peach: #fec89a;
+    --peach: #fec89a;
 
-  // --background: #fcd5ce;
-  --background: #f8edeb;
+    // --background: #fcd5ce;
+    --background: #f8edeb;
 
-  --white: #fffffe;
+    --white: #fffffe;
 
-  --placeholder: #c3c3c3;
+    --placeholder: #c3c3c3;
+  }
 }

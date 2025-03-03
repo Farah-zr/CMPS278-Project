@@ -22,8 +22,8 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import React, { useEffect } from "react";
 import axios from "axios";
 import SideBar from "../SideBar";
-import "../styles/foodContainer.css";
-import "../styles/container.css";
+import "../../assets/styles/foodContainer.css";
+import "../../assets/styles/container.css";
 
 function Search() {
   const TextButton = styled(Button)(({ theme }) => ({
@@ -46,16 +46,16 @@ function Search() {
   const [searchText, setSearchText] = React.useState("");
   const [id, setId] = React.useState(0);
 
-  useEffect(() => {
-    axios
-      .get(`https://localhost:5001/api/MenuItems`)
-      .then((res) => {
-        setItems(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://localhost:5001/api/MenuItems`)
+  //     .then((res) => {
+  //       setItems(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   const handleClickOpen = (e) => {
     setId(e.currentTarget.getAttribute("button-key"));
@@ -103,20 +103,20 @@ function Search() {
   };
 
   // const handleSearch = (e) => {
-  useEffect(() => {
-    if (searchText.length !== 0) {
-      setItems(
-        items.filter((item) =>
-          item.name.toLowerCase().includes(searchText.toLowerCase())
-        )
-      );
-    } else {
-      axios.get(`https://localhost:5001/api/MenuItems`).then((res) => {
-        setItems(res.data);
-      });
-      //   setSearchText('');
-    }
-  }, [items, searchText]);
+  // useEffect(() => {
+  //   if (searchText.length !== 0) {
+  //     setItems(
+  //       items.filter((item) =>
+  //         item.name.toLowerCase().includes(searchText.toLowerCase())
+  //       )
+  //     );
+  //   } else {
+  //     axios.get(`https://localhost:5001/api/MenuItems`).then((res) => {
+  //       setItems(res.data);
+  //     });
+  //     //   setSearchText('');
+  //   }
+  // }, [items, searchText]);
   // }
 
   return (

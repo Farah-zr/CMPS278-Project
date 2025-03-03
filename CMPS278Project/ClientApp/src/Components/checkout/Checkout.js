@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/foodContainer.css";
+import "../../assets/styles/foodContainer.css";
 import {
   Box,
   Button,
@@ -42,18 +42,18 @@ function Checkout() {
       });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://localhost:5001/api/MenuItems`)
-      .then((res) => {
-        setItems(res.data);
-        console.log(res.data);
-        console.log(items);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://localhost:5001/api/MenuItems`)
+  //     .then((res) => {
+  //       setItems(res.data);
+  //       console.log(res.data);
+  //       console.log(items);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   var subtotal = 0;
   var total;
