@@ -1,42 +1,32 @@
 import React from "react";
 import "../../assets/styles/foodContainer.css";
-import { Box, Grid, styled, Tabs } from "@mui/material";
+import { Box, styled, Tabs } from "@mui/material";
 import Tab from "@mui/material/Tab";
-import CakePops from "./CakePops";
-import Brownies from "./Brownies";
-import CinnamonRolls from "./CinnamonRolls";
-import Cookies from "./Cookies";
-import Cupcakes from "./Cupcakes";
 import { useSelector } from "react-redux";
 import ItemCard from "../ItemCard";
 
 function FoodContainer() {
-  const CustomizedTabs = styled(Tabs)({
+  const CustomizedTabs = styled((props) => <Tabs {...props} />)({
     "& .MuiTabs-indicator": {
-      backgroundColor: "#EF9DAA",
+      backgroundColor: "var(--peach)",
+      bottom: "10px",
     },
   });
 
   const CustomizedTab = styled((props) => <Tab disableRipple {...props} />)(
-    ({ theme }) => ({
+    () => ({
       textTransform: "none",
+      padding: "12px 0",
+      margin: "0 8px",
+      fontSize: "17px",
       minWidth: 0,
-      [theme.breakpoints.up("sm")]: {
-        minWidth: 0,
-      },
-      fontWeight: theme.typography.fontWeightRegular,
-      marginRight: theme.spacing(1),
-      color: "#121629",
+      fontWeight: "600",
+      color: "var(--melon)",
       "&:hover": {
-        color: "#EF9DAA",
-        opacity: 1,
+        color: "var(--primary)",
       },
       "&.Mui-selected": {
-        color: "#EF9DAA",
-        fontWeight: theme.typography.fontWeightMedium,
-      },
-      "&.Mui-focusVisible": {
-        backgroundColor: "#abd1c6",
+        color: "var(--peach)",
       },
     })
   );
@@ -50,9 +40,9 @@ function FoodContainer() {
 
   return (
     <>
-      <div className="foodcontainer">
-        <Box className="left-side">
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <div className="menu-container mt-8 w-full h-full">
+        <Box className="w-full h-full">
+          <Box>
             <CustomizedTabs value={category} onChange={handleChange} centered>
               <CustomizedTab label="Brownies" />
               <CustomizedTab label="Cake Pops" />
@@ -62,94 +52,93 @@ function FoodContainer() {
             </CustomizedTabs>
           </Box>
 
-          {(status === "loading" || status === "idle") && (
-            <p className="text-lg">loading..</p>
-          )}
+          <div className="py-4 flex justify-center max-h-[calc(100%-48px)]">
+            {(status === "loading" || status === "idle") && (
+              <p className="text-lg">loading..</p>
+            )}
 
-          {status === "success" && (
-            <div>
-              {category === 0 && (
-                <div className="flex gap-2">
-                  {items.brownies.status === 200 && (
-                    <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
-                      {items.brownies.data.map((item) => {
-                        return (
-                          <Grid item>
-                            <ItemCard item={item} category="brownies" />
-                            {/* handleClickOpen={handleClickOpen} */}
-                          </Grid>
-                        );
-                      })}
-                    </Grid>
-                  )}
-                </div>
-              )}
-              {category === 1 && (
-                <div className="flex gap-2">
-                  {items.cakepops.status === 200 && (
-                    <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
-                      {items.cakepops.data.map((item) => {
-                        return (
-                          <Grid item>
-                            <ItemCard item={item} category="cakepops" />
-                            {/* handleClickOpen={handleClickOpen} */}
-                          </Grid>
-                        );
-                      })}
-                    </Grid>
-                  )}
-                </div>
-              )}
-              {category === 2 && (
-                <div className="flex gap-2">
-                  {items.cinnamonrolls.status === 200 && (
-                    <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
-                      {items.cinnamonrolls.data.map((item) => {
-                        return (
-                          <Grid item>
-                            <ItemCard item={item} category="cinnamonrolls" />
-                            {/* handleClickOpen={handleClickOpen} */}
-                          </Grid>
-                        );
-                      })}
-                    </Grid>
-                  )}
-                </div>
-              )}
-              {category === 3 && (
-                <div className="flex gap-2">
-                  {items.cookies.status === 200 && (
-                    <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
-                      {items.cookies.data.map((item) => {
-                        return (
-                          <Grid item>
-                            <ItemCard item={item} category="cookies" />
-                            {/* handleClickOpen={handleClickOpen} */}
-                          </Grid>
-                        );
-                      })}
-                    </Grid>
-                  )}
-                </div>
-              )}
-              {category === 4 && (
-                <div className="flex gap-2">
-                  {items.cupcakes.status === 200 && (
-                    <Grid container spacing={1} sx={{ px: 2, py: 1 }}>
-                      {items.cupcakes.data.map((item) => {
-                        return (
-                          <Grid item>
-                            <ItemCard item={item} category="cupcakes" />
-                            {/* handleClickOpen={handleClickOpen} */}
-                          </Grid>
-                        );
-                      })}
-                    </Grid>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
+            {status === "success" && (
+              <div className="overflow-y-auto overflow-x-hidden scroll w-full px-2 mb-5 min-h-0 max-h-full h-[calc(100vh-180px)]">
+                {category === 0 && (
+                  <>
+                    {items.brownies.status === 200 && (
+                      <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-full">
+                        {items.brownies.data.map((item) => {
+                          return (
+                            <div className="w-[calc(100%)]">
+                              <ItemCard item={item} category="brownies" />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                )}
+                {category === 1 && (
+                  <>
+                    {items.cakepops.status === 200 && (
+                      <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+                        {items.cakepops.data.map((item) => {
+                          return (
+                            <div className="w-[calc(100%)]">
+                              <ItemCard item={item} category="cakepops" />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                )}
+                {category === 2 && (
+                  <>
+                    {items.cinnamonrolls.status === 200 && (
+                      <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+                        {items.cinnamonrolls.data.map((item) => {
+                          return (
+                            <div className="w-[calc(100%)]">
+                              <ItemCard item={item} category="cinnamonrolls" />
+                              {/* handleClickOpen={handleClickOpen} */}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                )}
+                {category === 3 && (
+                  <>
+                    {items.cookies.status === 200 && (
+                      <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+                        {items.cookies.data.map((item) => {
+                          return (
+                            <div className="w-[calc(100%)]">
+                              <ItemCard item={item} category="cookies" />
+                              {/* handleClickOpen={handleClickOpen} */}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                )}
+                {category === 4 && (
+                  <>
+                    {items.cupcakes.status === 200 && (
+                      <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+                        {items.cupcakes.data.map((item) => {
+                          return (
+                            <div className="w-[calc(100%)]">
+                              <ItemCard item={item} category="cupcakes" />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+            )}
+          </div>
         </Box>
       </div>
     </>

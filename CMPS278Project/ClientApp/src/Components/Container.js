@@ -1,18 +1,20 @@
 import React from "react";
 import "../assets/styles/container.css";
-import Header from "./bars/Header";
+import Header from "./Header";
 import FoodContainer from "./menu/FoodContainer";
-import SideBar from "./SideBar";
+import Sidebar from "./Sidebar";
 
 function Container() {
   return (
     <>
-      <div className="flex">
-        <SideBar />
+      <div className="flex w-full">
+        <Sidebar />
         <div className="w-full px-7 py-5">
-          <div className="max-w-[1200px] my-0 mx-auto">
+          <div className="max-w-[1116px] my-0 mx-auto">
             <Header />
-            <FoodContainer />
+            <div className="h-[calc(100%-60px)]">
+              <FoodContainer />
+            </div>
           </div>
         </div>
       </div>

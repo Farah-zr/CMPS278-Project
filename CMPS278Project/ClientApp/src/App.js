@@ -21,7 +21,7 @@ function App() {
     if (status === "idle") {
       dispatch(fetchMenuItemsThunk());
     }
-  }, [status, dispatch]);
+  }, [status]);
 
   if (status === "loading") console.log("Loading...");
   if (status === "fail") console.log("error:", error);
@@ -36,15 +36,15 @@ function App() {
           <Routes>
             {/* <Route path="/menu" element={<Container />} /> */}
             <Route path="/" element={<Container />} />
-            <Route path="/checkout" element={<Checkout />} />
+            {/* <Route path="/checkout" element={<Checkout />} /> */}
             <Route path="/cart" element={<Cart />} />
             {/* <Route path="/" element={<Login />} /> */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Signup />} />
-            <Route path="/thanku" element={<ThankYou />} />
+            {/* <Route path="/login" element={<Login />} /> */}
+            {/* <Route path="/register" element={<Signup />} />
+            <Route path="/thanku" element={<ThankYou />} /> */}
             {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/aboutus" element={<AboutUs />} />
-            <Route path="/search" element={<Search />} />
+            {/* <Route path="/search" element={<Search />} /> */}
           </Routes>
         </Router>
       </div>

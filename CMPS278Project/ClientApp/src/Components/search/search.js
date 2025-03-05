@@ -21,7 +21,7 @@ import { FaSearch } from "react-icons/fa";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import React, { useEffect } from "react";
 import axios from "axios";
-import SideBar from "../SideBar";
+import Sidebar from "../Sidebar";
 import "../../assets/styles/foodContainer.css";
 import "../../assets/styles/container.css";
 
@@ -121,7 +121,7 @@ function Search() {
 
   return (
     <>
-      <SideBar />
+      <Sidebar />
       <div className="top-section">
         <div className="search-box">
           <input

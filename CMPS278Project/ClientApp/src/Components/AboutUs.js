@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import SideBar from "./SideBar";
+import Sidebar from "./Sidebar";
 import "../assets/styles/aboutus.css";
 
 const AboutUs = () => {
   return (
     <>
       {" "}
-      <SideBar />
+      <Sidebar />
       <div className="bgimg">
         <div className="coming-soon-container">
           <Box className="bg-white opacity-70 w-[500px] h-[250px] p-[16px]">

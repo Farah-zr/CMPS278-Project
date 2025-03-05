@@ -13,7 +13,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
-import SideBar from "../SideBar";
+import Sidebar from "../Sidebar";
 
 function Cart() {
   const ColorButton = styled(Button)(({ theme }) => ({
@@ -28,16 +28,16 @@ function Cart() {
   const [items, setItems] = React.useState([]);
   const [state, setState] = React.useState(0);
 
-  useEffect(() => {
-    axios
-      .get(`https://localhost:5001/api/CartItems`)
-      .then((res) => {
-        setCartItems(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [state]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://localhost:5001/api/CartItems`)
+  //     .then((res) => {
+  //       setCartItems(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, [state]);
 
   const handleDelete = (e) => {
     var id = e.currentTarget.getAttribute("button-key");
@@ -85,7 +85,7 @@ function Cart() {
 
   return (
     <>
-      <SideBar />
+      <Sidebar />
       <div className="foodcontainer">
         <Container maxWidth="sm">
           <Box

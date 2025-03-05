@@ -14,7 +14,7 @@ function Header() {
           <FaCookieBite />
         </div>
         <div>
-          <span className="text-white text-[18px] font-bold-italic">
+          <span className="text-peach text-[18px] font-bold-italic">
             we deliver joy and happiness in a box to your doorstep
           </span>
         </div>

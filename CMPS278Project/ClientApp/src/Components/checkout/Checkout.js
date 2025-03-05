@@ -15,7 +15,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import SideBar from "../SideBar";
+import Sidebar from "../Sidebar";
 
 function Checkout() {
   const ColorButton = styled(Button)(({ theme }) => ({
@@ -29,18 +29,18 @@ function Checkout() {
   const [cartItems, setCartItems] = React.useState([]);
   const [items, setItems] = React.useState([]);
 
-  useEffect(() => {
-    axios
-      .get(`https://localhost:5001/api/CartItems`)
-      .then((res) => {
-        setCartItems(res.data);
-        console.log(res.data);
-        console.log(cartItems);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://localhost:5001/api/CartItems`)
+  //     .then((res) => {
+  //       setCartItems(res.data);
+  //       console.log(res.data);
+  //       console.log(cartItems);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   // useEffect(() => {
   //   axios
@@ -70,7 +70,7 @@ function Checkout() {
 
   return (
     <>
-      <SideBar />
+      <Sidebar />
       <div className="foodcontainer">
         <Container maxWidth="sm">
           <Box

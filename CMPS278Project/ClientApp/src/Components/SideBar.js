@@ -16,7 +16,7 @@ const Icon = ({ icon, styles, isActive }) => (
   </p>
 );
 
-function SideBar() {
+function Sidebar() {
   const location = useLocation();
 
   return (
@@ -40,12 +40,12 @@ function SideBar() {
             isActive={location.pathname === "/cart"}
           />
         </Link>
-        <Link to="/search">
+        {/* <Link to="/search">
           <Icon
             icon={<FaSearch title="Search" />}
             isActive={location.pathname === "/search"}
           />
-        </Link>
+        </Link> */}
         <Link to="/aboutus">
           <Icon
             icon={<IoStorefront title="About us" />}
@@ -63,4 +63,4 @@ function SideBar() {
   );
 }
 
-export default SideBar;
+export default Sidebar;

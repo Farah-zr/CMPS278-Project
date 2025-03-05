@@ -4,16 +4,17 @@
   /* height: calc(100% - 45px); */
   height: 100%;
   display: flex;
-  padding-top: 15px;
+  /* padding-top: 15px; */
 }
 
 .foodcontainer .left-side {
-  width: 100%;
+  /* width: 100%; */
   /* background: #c1ada3; */
+  width: 880px;
   background: #fffffe;
 
-  height: 93%;
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);
+  /* height: 93%; */
+  /* box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4); */
   margin-top: 20px;
   margin-left: 100px;
   margin-right: 100px;

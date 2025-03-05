@@ -25,9 +25,6 @@ export const fetchMenuItemsThunk = createAsyncThunk(
         status: res.status,
       };
     });
-
-    console.log(menu);
-
     return menu;
   }
 );
