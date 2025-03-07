@@ -25,10 +25,6 @@ The following features are not yet completed:
 - **Styling:** CSS / SASS, MUI, Tailwind CSS
 - **Database:** SQLite
 
-## 📸 Screenshots
-
-![Home Page](CMPS278Project/ClientApp/src/assets/images/ui-screenshot-home.png)
-
 ## 💻 How to Run the App
 
 ### Backend Setup
@@ -64,8 +60,10 @@ The following features are not yet completed:
    ```sh
    npm start
    ```
-
 ---
 
-📌 Stay tuned for more updates!
+## 📸 Screenshots
+
+![Home Page](CMPS278Project/ClientApp/src/assets/images/ui-screenshot-home.png)
+
 
