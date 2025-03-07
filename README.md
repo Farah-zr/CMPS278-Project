@@ -29,19 +29,15 @@ The following features are not yet completed:
 
 ### Backend Setup
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-repo.git
-   ```
-2. Navigate to the folder:
+1. Navigate to the folder:
    ```sh
    cd CMPS278Project
    ```
-3. Install dependencies:
+2. Install dependencies:
    ```sh
    dotnet restore
    ```
-4. Run the backend server:
+3. Run the backend server:
    ```sh
    dotnet run
    ```
