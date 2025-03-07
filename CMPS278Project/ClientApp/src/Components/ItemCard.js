@@ -13,7 +13,7 @@ import {
 import React from "react";
 
 function ItemCard(props) {
-  const InstructionsTextarea = styled(TextField)(({ theme }) => ({
+  const InstructionsTextarea = styled(TextField)(() => ({
     size: "small",
     margin: "8px 0",
     "& label": {
@@ -37,7 +37,7 @@ function ItemCard(props) {
     },
   }));
 
-  const ColoredButton = styled(Button)(({ theme }) => ({
+  const ColoredButton = styled(Button)(() => ({
     textTransform: "none",
     color: "white",
     backgroundColor: "var(--melon)",
@@ -118,10 +118,11 @@ function ItemCard(props) {
                 &ndash;
               </button>
               <input
-                className="p-3 text-[16px] border-0 w-[100px] text-center"
+                className="p-3 text-[16px] border-0 w-[100px] text-center disabled:bg-transparent disabled:opacity-100"
                 type="text"
                 value={quantity}
-                readonly
+                readOnly
+                disabled
               />
               <button
                 className="outline-none p-1 w-fit h-[40px] text-[18px] text-melon bg-transparent border-0 cursor-pointer hover:text-primary"

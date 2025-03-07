@@ -1,13 +1,10 @@
-import { Box, Typography } from "@mui/material";
-import Sidebar from "./Sidebar";
 import "../assets/styles/aboutus.css";
 
 const AboutUs = () => {
   return (
     <>
-      {" "}
-      <Sidebar />
-      <div className="bgimg">
+      <p>about us (coming soon)</p>
+      {/* <div className="bgimg">
         <div className="coming-soon-container">
           <Box className="bg-white opacity-70 w-[500px] h-[250px] p-[16px]">
             <Typography variant="h5" sx={{ color: "#121629", mb: 1 }}>
@@ -28,7 +25,7 @@ const AboutUs = () => {
             </Typography>
           </Box>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

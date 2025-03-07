@@ -1,32 +1,31 @@
 import React from "react";
 import "../../assets/styles/foodContainer.css";
-import {
-  Box,
-  Button,
-  Container,
-  IconButton,
-  styled,
-  Typography,
-} from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { useEffect } from "react";
-import Sidebar from "../Sidebar";
+import // Box,
+// Button,
+// Container,
+// IconButton,
+// styled,
+// Typography,
+"@mui/material";
+// import DeleteIcon from "@mui/icons-material/Delete";
+// import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+// import { Link } from "react-router-dom";
+// import axios from "axios";
+// import { useEffect } from "react";
+// import Sidebar from "../Sidebar";
 
 function Cart() {
-  const ColorButton = styled(Button)(({ theme }) => ({
-    color: "#121629",
-    backgroundColor: "#eebbc3",
-    "&:hover": {
-      backgroundColor: "#EF9DAA",
-    },
-  }));
+  // const ColorButton = styled(Button)(({ theme }) => ({
+  //   color: "#121629",
+  //   backgroundColor: "#eebbc3",
+  //   "&:hover": {
+  //     backgroundColor: "#EF9DAA",
+  //   },
+  // }));
 
-  const [cartItems, setCartItems] = React.useState([]);
-  const [items, setItems] = React.useState([]);
-  const [state, setState] = React.useState(0);
+  // const [cartItems, setCartItems] = React.useState([]);
+  // const [items, setItems] = React.useState([]);
+  // const [state, setState] = React.useState(0);
 
   // useEffect(() => {
   //   axios
@@ -39,18 +38,18 @@ function Cart() {
   //     });
   // }, [state]);
 
-  const handleDelete = (e) => {
-    var id = e.currentTarget.getAttribute("button-key");
-    cartItems
-      .filter((data) => data.menuItemId == id)
-      .map((deletedItem) => {
-        console.log(deletedItem.id);
-        fetch("https://localhost:5001/api/CartItems/" + deletedItem.id, {
-          method: "DELETE",
-        });
-      });
-    setState((n) => n + 1);
-  };
+  // const handleDelete = (e) => {
+  //   var id = e.currentTarget.getAttribute("button-key");
+  //   cartItems
+  //     .filter((data) => data.menuItemId == id)
+  //     .map((deletedItem) => {
+  //       console.log(deletedItem.id);
+  //       fetch("https://localhost:5001/api/CartItems/" + deletedItem.id, {
+  //         method: "DELETE",
+  //       });
+  //     });
+  //   setState((n) => n + 1);
+  // };
 
   // useEffect(() => {
   //   axios
@@ -66,27 +65,27 @@ function Cart() {
   // }, []);
 
   // getting list of cart items from menu items db
-  var listOfCartItems = [];
-  var quantities = [];
-  var ids = [];
-  var prices = 0;
-  var i = -1;
+  // var listOfCartItems = [];
+  // var quantities = [];
+  // var ids = [];
+  // var prices = 0;
+  // var i = -1;
 
-  cartItems.forEach((item) => {
-    items
-      .filter((data) => data.id == item.menuItemId)
-      .map((filteredItem) => {
-        listOfCartItems.push(filteredItem);
-        quantities.push(item.quantity);
-        ids.push(item.menuItemId);
-        prices += filteredItem.price * item.quantity;
-      });
-  });
+  // cartItems.forEach((item) => {
+  //   items
+  //     .filter((data) => data.id == item.menuItemId)
+  //     .map((filteredItem) => {
+  //       listOfCartItems.push(filteredItem);
+  //       quantities.push(item.quantity);
+  //       ids.push(item.menuItemId);
+  //       prices += filteredItem.price * item.quantity;
+  //     });
+  // });
 
   return (
     <>
-      <Sidebar />
-      <div className="foodcontainer">
+      <p>cart (coming soon)</p>
+      {/* <div className="foodcontainer">
         <Container maxWidth="sm">
           <Box
             sx={{
@@ -219,7 +218,7 @@ function Cart() {
             </Box>
           </Box>
         </Container>
-      </div>
+      </div> */}
     </>
   );
 }

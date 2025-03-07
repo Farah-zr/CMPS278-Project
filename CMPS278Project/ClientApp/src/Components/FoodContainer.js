@@ -1,9 +1,9 @@
 import React from "react";
-import "../../assets/styles/foodContainer.css";
-import { Box, styled, Tabs } from "@mui/material";
+import "../assets/styles/foodContainer.css";
+import { Box, Skeleton, styled, Tabs } from "@mui/material";
 import Tab from "@mui/material/Tab";
 import { useSelector } from "react-redux";
-import ItemCard from "../ItemCard";
+import ItemCard from "./ItemCard";
 
 function FoodContainer() {
   const CustomizedTabs = styled((props) => <Tabs {...props} />)({
@@ -32,7 +32,7 @@ function FoodContainer() {
   );
 
   const [category, setCategory] = React.useState(0);
-  const { items, status, error } = useSelector((state) => state.menu);
+  const { items, status } = useSelector((state) => state.menu);
 
   const handleChange = (event, newValue) => {
     setCategory(newValue);
@@ -53,8 +53,18 @@ function FoodContainer() {
           </Box>
 
           <div className="py-4 flex justify-center max-h-[calc(100%-48px)]">
-            {(status === "loading" || status === "idle") && (
-              <p className="text-lg">loading..</p>
+            {status !== "success" && ( //
+              // (status === "loading" || status === "idle")
+              <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-full">
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <Skeleton
+                    key={index}
+                    variant="rectangular"
+                    width="100%"
+                    height={150}
+                  />
+                ))}
+              </div>
             )}
 
             {status === "success" && (

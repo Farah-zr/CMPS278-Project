@@ -1,17 +1,13 @@
 import "./App.css";
-import Container from "./Components/Container";
 import Profile from "./Components/user/Profile";
 import AboutUs from "./Components/AboutUs";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Checkout from "./Components/checkout/Checkout";
-import ThankYou from "./Components/checkout/thankYou";
-import Cart from "./Components/cart/Cart";
-import Login from "./Components/Login/Login";
-import Signup from "./Components/Signup/Signup";
-import Search from "./Components/search/search";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchMenuItemsThunk } from "./Store/MenuSlice";
+import AppLayout from "./Layouts/AppLayout";
+import Cart from "./Components/cart/Cart";
+import FoodContainer from "./Components/FoodContainer";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,7 +17,7 @@ function App() {
     if (status === "idle") {
       dispatch(fetchMenuItemsThunk());
     }
-  }, [status]);
+  }, [status, dispatch]);
 
   if (status === "loading") console.log("Loading...");
   if (status === "fail") console.log("error:", error);
@@ -31,22 +27,22 @@ function App() {
     <>
       <div className="App">
         <Router>
-          {/* <SideBar /> */}
-          {/* <Container /> */}
           <Routes>
-            {/* <Route path="/menu" element={<Container />} /> */}
-            <Route path="/" element={<Container />} />
-            {/* <Route path="/checkout" element={<Checkout />} /> */}
-            <Route path="/cart" element={<Cart />} />
-            {/* <Route path="/" element={<Login />} /> */}
-            {/* <Route path="/login" element={<Login />} /> */}
-            {/* <Route path="/register" element={<Signup />} />
-            <Route path="/thanku" element={<ThankYou />} /> */}
-            {/* <Route path="/profile" element={<Profile />} /> */}
-            <Route path="/aboutus" element={<AboutUs />} />
-            {/* <Route path="/search" element={<Search />} /> */}
+            <Route path="/" element={<AppLayout />}>
+              <Route index element={<FoodContainer />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/cart" element={<Cart />} />
+            </Route>
           </Routes>
         </Router>
+
+        {/* <Route path="/checkout" element={<Checkout />} /> */}
+        {/* <Route path="/" element={<Login />} /> */}
+        {/* <Route path="/login" element={<Login />} /> */}
+        {/* <Route path="/register" element={<Signup />} />
+            <Route path="/thanku" element={<ThankYou />} /> */}
+        {/* <Route path="/search" element={<Search />} /> */}
       </div>
     </>
   );

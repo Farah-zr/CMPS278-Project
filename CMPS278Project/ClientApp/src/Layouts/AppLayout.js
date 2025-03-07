@@ -1,10 +1,10 @@
 import React from "react";
 import "../assets/styles/container.css";
-import Header from "./Header";
-import FoodContainer from "./menu/FoodContainer";
-import Sidebar from "./Sidebar";
+import Sidebar from "../Components/Sidebar";
+import Header from "../Components/Header";
+import { Outlet } from "react-router-dom";
 
-function Container() {
+function AppLayout() {
   return (
     <>
       <div className="flex w-full">
@@ -13,7 +13,7 @@ function Container() {
           <div className="max-w-[1116px] my-0 mx-auto">
             <Header />
             <div className="h-[calc(100%-60px)]">
-              <FoodContainer />
+              <Outlet />
             </div>
           </div>
         </div>
@@ -22,4 +22,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default AppLayout;

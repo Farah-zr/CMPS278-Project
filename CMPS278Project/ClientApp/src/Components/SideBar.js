@@ -1,6 +1,6 @@
 import React from "react";
 import { FaSignOutAlt, FaShoppingCart, FaCookieBite } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
+import { MdPerson } from "react-icons/md";
 import { IoRestaurant, IoStorefront } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 
@@ -46,10 +46,17 @@ function Sidebar() {
             isActive={location.pathname === "/search"}
           />
         </Link> */}
-        <Link to="/aboutus">
+        <Link to="/about-us">
           <Icon
             icon={<IoStorefront title="About us" />}
-            isActive={location.pathname === "/aboutus"}
+            isActive={location.pathname === "/about-us"}
+          />
+        </Link>
+
+        <Link to="/profile">
+          <Icon
+            icon={<MdPerson title="profile" />}
+            isActive={location.pathname === "/profile"}
           />
         </Link>
       </div>

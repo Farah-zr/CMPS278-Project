@@ -1,6 +1,5 @@
-import { Typography } from "@mui/material";
 import React from "react";
-import { IoMdSearch } from "react-icons/io";
+// import { IoMdSearch } from "react-icons/io";
 import { FaCookieBite } from "react-icons/fa";
 
 function Header() {
@@ -20,7 +19,7 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex items-center align-middle relative w-[300px] h-[38px]">
+      {/* <div className="flex items-center align-middle relative w-[300px] h-[38px]">
         <input
           type="text"
           placeholder="Search..."
@@ -29,7 +28,7 @@ function Header() {
         <span className="absolute end-0 inset-y-0 flex items-center justify-center px-2 z-10 text-placeholder">
           <IoMdSearch />
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }

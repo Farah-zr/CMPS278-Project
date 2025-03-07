@@ -38,7 +38,9 @@ public class AppDbContext : IdentityDbContext<User>
             new Brownie { Id = 1, Name = "Biscoff Brownies", Description = "the moist chewy interior filled with biscoff spread, and topped with biscoff cookies", Price = 5.5 },
             new Brownie { Id = 2, Name = "Fudgy Oreo Brownies", Description = "loaded with oreo pieces and chocolate chunks", Price = 5.5 },
             new Brownie { Id = 3, Name = "Dulce De Leche Brownies", Description = "made with our favorite fudgy brownies recipe and swirled with caramel-like dulce de leche.", Price = 6 },
-            new Brownie { Id = 4, Name = "Fudgy Brownies with Chocolate Chunks", Description = "chewy and fudgy brownies loaded with chocolate chunks, melted chocolate, and cocoa powder", Price = 5 }
+            new Brownie { Id = 4, Name = "Fudgy Brownies with Chocolate Chunks", Description = "chewy and fudgy brownies loaded with chocolate chunks, melted chocolate, and cocoa powder", Price = 5 },
+            new Brownie { Id = 5, Name = "Sprinkle Brownies", Description = "", Price = 5 }
+
         );
         builder.Entity<CinnamonRoll>().ToTable("CinnamonRolls").HasData(
             new CinnamonRoll { Id = 1, Name = "Classic Cinnamon Roll", Description = "", Price = 7 },
