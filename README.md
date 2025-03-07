@@ -1,6 +1,6 @@
 # Online Bake Shop v2 - In Progress 🚧
 
-This project is an updated version of an Online Bake Shop, originally developed as an academic project. Version 2 is currently in progress.
+This project is an updated version of an academic project, Online Bake Shop. Version 2 is currently in progress.
 
 ## 🚀 What's New in Version 2?
 
